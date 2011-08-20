@@ -1,0 +1,4 @@
+export PATH="~/bin:~/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
+export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/cuda/bin:${PATH}:${ANT_HOME}/bin:/opt/glassfish/bin:/usr/local/mysql/bin:/opt/local/bin:${SCALA_HOME}/bin
+export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH

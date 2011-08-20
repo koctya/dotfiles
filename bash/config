@@ -1,0 +1,48 @@
+
+# Set the PS1 prompt (with colors).
+# Based on http://www-128.ibm.com/developerworks/linux/library/l-tip-prompt/
+# And http://networking.ringofsaturn.com/Unix/Bash-prompts.php .
+#PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w$ \[\e[0m\]"
+export PS1="\w$ "
+export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
+
+## Editor
+#    export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+export EDITOR='emacs'
+
+# colors for misc things
+export TERM=xterm-color
+export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+export CLICOLOR=1
+# Set colors
+export LS_COLORS='di=1;36:fi=0:ln=4;34:pi=5:so=4;5:bd=5:cd=5:or=4;91:mi=4;92:ex=35:*.rb=90'
+
+# Set terminal window title
+export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -ne "\007"'
+
+export ANT_HOME=/opt/ant
+export CVS_RSH=ssh
+export CVSROOT=:ext:kal@chaos.local:/opt/repository
+#		export SVNROOT=https://svn2.assembla.com/svn/klmn
+export DERBY_INSTALL=/opt/apache/db-derby-10.2.2.0-bin
+#		export CLASSPATH=$DERBY_INSTALL/lib/derby.jar:$DERBY_INSTALL/lib/derbytools.jar:.
+export SCALA_HOME=/usr/local/scala
+#		export AXIS2_HOME=$HOME/projects/Axis2/axis2-1.5.1
+export JAVA_HOME=/Library/Java/Home/
+#export SCALA_HOME=/usr/lib/scala
+export TERM=xterm-color
+export PATH=/usr/local/git/bin/:$PATH
+
+# Append commands to the bash command history file (~/.bash_history)
+# instead of overwriting it.
+shopt -s histappend
+
+# Set Go environment
+export GOROOT=/usr/local/go
+export GOOS=darwin
+export GOARCH=amd64
+
+# Avoid succesive duplicates in the bash command history.
+export HISTCONTROL=erasedups
+export HISTSIZE=5000
+export HISTIGNORE="&:ls:exit"

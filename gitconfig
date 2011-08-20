@@ -1,0 +1,31 @@
+[user]
+	name = Kurt Landrus
+	email = klandrus@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+  ui = true
+  pager = true
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+	b = branch
+  l = log
+  d = diff
+  cmesg = log --pretty=format:"%s"
+  lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative
+  wipe = "!git reset --hard;git clean -fd"
+	w = whatchanged
+[apply]
+	whitespace = nowarn
+[gui]
+        recentrepo = /Users/klandrus/Projects/Blueprint/vagrant/midpoint/dev
+[core]
+	editor = emacs
+[github]
+		user = koctya
+[diff]
+	  ignoresubmodules = untracked
