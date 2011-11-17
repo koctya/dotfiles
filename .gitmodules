@@ -1,0 +1,48 @@
+[submodule "emacs.d/vendor/sass-mode"]
+	path = emacs.d/vendor/sass-mode
+	url = https://github.com/nex3/sass-mode
+[submodule "emacs.d/vendor/coffee-mode"]
+	path = emacs.d/vendor/coffee-mode
+	url = https://github.com/defunkt/coffee-mode
+[submodule "emacs.d/vendor/auctex"]
+	path = emacs.d/vendor/auctex
+	url = https://github.com/eschulte/auctex
+[submodule "emacs.d/vendor/color-theme"]
+	path = emacs.d/vendor/color-theme
+	url = https://github.com/emacsmirror/color-theme
+[submodule "emacs.d/vendor/color-theme-ir-black"]
+	path = emacs.d/vendor/color-theme-ir-black
+	url = https://github.com/rmm5t/color-theme-ir-black
+[submodule "emacs.d/vendor/haml-mode"]
+	path = emacs.d/vendor/haml-mode
+	url = https://github.com/nex3/haml-mode
+[submodule "emacs.d/vendor/feature-mode.el"]
+	path = emacs.d/vendor/feature-mode.el
+	url = https://github.com/michaelklishin/cucumber.el
+[submodule "emacs.d/vendor/js2-mode"]
+	path = emacs.d/vendor/js2-mode
+	url = https://github.com/mooz/js2-mode
+[submodule "emacs.d/vendor/lua-mode"]
+	path = emacs.d/vendor/lua-mode
+	url = https://github.com/emacsmirror/lua-mode
+[submodule "emacs.d/vendor/markdown-mode"]
+	path = emacs.d/vendor/markdown-mode
+	url = https://github.com/defunkt/markdown-mode
+[submodule "emacs.d/vendor/magit"]
+	path = emacs.d/vendor/magit
+	url = https://github.com/magit/magit
+[submodule "emacs.d/vendor/yaml-mode"]
+	path = emacs.d/vendor/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode
+[submodule "emacs.d/vendor/ruby-electric"]
+	path = emacs.d/vendor/ruby-electric
+	url = https://github.com/qoobaa/ruby-electric
+[submodule "emacs.d/vendor/textmate.el"]
+	path = emacs.d/vendor/textmate.el
+	url = https://github.com/defunkt/textmate.el
+[submodule "emacs.d/vendor/yasnippet"]
+	path = emacs.d/vendor/yasnippet
+	url = https://github.com/emacsmirror/yasnippet
+[submodule "emacs.d/vendor/rinari"]
+	path = emacs.d/vendor/rinari
+	url = https://github.com/eschulte/rinari
