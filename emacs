@@ -11,5 +11,3 @@
 (setq c-default-style "bsd"
       c-basic-offset 4)
 
-(add-to-list 'load-path "/usr/local/scala/misc/scala-tool-support/emacs")
-(require 'scala-mode-auto)

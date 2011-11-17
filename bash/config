@@ -20,11 +20,11 @@ export LS_COLORS='di=1;36:fi=0:ln=4;34:pi=5:so=4;5:bd=5:cd=5:or=4;91:mi=4;92:ex=
 # Set terminal window title
 export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -ne "\007"'
 
-export ANT_HOME=/opt/ant
+#export ANT_HOME=/opt/ant
 export CVS_RSH=ssh
 export CVSROOT=:ext:kal@chaos.local:/opt/repository
 #		export SVNROOT=https://svn2.assembla.com/svn/klmn
-export DERBY_INSTALL=/opt/apache/db-derby-10.2.2.0-bin
+#export DERBY_INSTALL=/opt/apache/db-derby-10.2.2.0-bin
 #		export CLASSPATH=$DERBY_INSTALL/lib/derby.jar:$DERBY_INSTALL/lib/derbytools.jar:.
 export SCALA_HOME=/usr/local/scala
 #		export AXIS2_HOME=$HOME/projects/Axis2/axis2-1.5.1

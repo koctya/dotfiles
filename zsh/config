@@ -12,7 +12,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 #  export PS1='%m:%3~$(git_info_for_prompt)%# '
   export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
 else
-  export PS1='%3~$(parse_git_branch)%# '
+  #export PS1='%3~$(parse_git_branch)%# '
+  export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
 fi
 
 HISTFILE=~/.zsh_history
