@@ -1,6 +1,5 @@
 source ~/.bash/aliases
 source ~/.bash/completions
-source ~/.bash/paths
 source ~/.bash/functions
 source ~/.bash/config
 #source /usr/local/git/contrib/completion/git-completion.bash

@@ -1,0 +1,17 @@
+#This line sets your path environment
+export PATH=$PATH:/usr/X11R6/bin:/opt/local/bin
+
+# Opens up an xterm
+xterm -geometry -250+200 &
+
+# If you login from xdm, uncomment this to make error messages appear
+# in the console window.
+#
+# tail -f /Users/kal/.xsession-errors > /dev/console &
+
+# Runs the fluxbox window manager 
+#exec /usr/local/bin/wmaker
+
+# Window Maker default X session startup script 
+exec quartz-wm --only-proxy &
+exec wmaker
