@@ -42,6 +42,8 @@ export GOROOT=/usr/local/go
 export GOOS=darwin
 export GOARCH=amd64
 
+export RBXOPT=-X19
+
 # Avoid succesive duplicates in the bash command history.
 export HISTCONTROL=erasedups
 export HISTSIZE=5000
