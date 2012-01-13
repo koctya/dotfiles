@@ -1,8 +1,9 @@
 # cd
 alias ..='cd ..'
+alias e='emacs -nw'
 
 # Add some easy shortcuts for formatted directory listings and add a touch of color.
-alias ls="ls -GFh" # list
+alias ls="ls -GFh --color=always" # list
 alias l="ls -lAh"
 alias ll="ls -l"
 alias la='ls -A'
@@ -28,14 +29,14 @@ alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
 # rails
-alias sc='script/console'
-alias ss='script/server'
-alias sg='script/generate'
-alias a='autotest -rails'
+alias rc='bundle exec rails console'
+alias rs='bundle exec rails server'
+alias rg='bundle exec rails generate'
 alias tlog='tail -f log/development.log'
-alias scaffold='script/generate nifty_scaffold'
-alias migrate='rake db:migrate db:test:clone'
+alias migrate='rake db:migrate'
 alias rst='touch tmp/restart.txt'
+alias cuke='cucumber -r features'
+alias b='bundle exec'
 
 # commands starting with % for pasting from web
 alias %=' '
@@ -46,3 +47,5 @@ alias grep='grep --color=auto'
  
 # Shortcut for using the Kdiff3 tool for svn diffs.
 alias svnkdiff3='svn diff --diff-cmd kdiff3'
+
+alias time_mpi='time mpirun --mca btl openib,self,sm --mca mpi_paffinity_alone 1'
