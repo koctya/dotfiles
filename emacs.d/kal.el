@@ -1,3 +1,22 @@
+;;; init.el --- Where the magic begins
+;;
+;; portions borrowed from Emacs Starter Kit
+;;
+;; This is first thing to get loaded.
+;;
+;; "Emacs outshines all other editing software in approximately the same
+;; way that the noonday sun does the stars. It is not just bigger and 
+;; brighter; it simply makes everything else vanish."
+;; -Neal Stephenson, "In the Beginning was the Command Line"
+
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -l))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+
+
+;;; --- start original kal.el
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "/usr/local/scala/misc/scala-tool-support/emacs")
 ;(require 'scala-mode-auto)
