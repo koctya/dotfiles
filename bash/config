@@ -10,9 +10,16 @@ export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\03
 #    export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
 export EDITOR='emacs'
 
+export PLATFORM=`uname -s`
+
 # colors for misc things
 export TERM=xterm-color
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+GREP_OPTIONS=
+for PATTERN in .cvs .git .hg .svn; do
+    GREP_OPTIONS="$GREP_OPTIONS --exclude-dir=$PATTERN"
+done
+GREP_OPTIONS="$GREP_OPTIONS --color=auto -s"
+export GREP_OPTIONS
 export CLICOLOR=1
 # Set colors
 export LS_COLORS='di=1;36:fi=0:ln=4;34:pi=5:so=4;5:bd=5:cd=5:or=4;91:mi=4;92:ex=35:*.rb=90'
@@ -39,7 +46,8 @@ shopt -s histappend
 
 # Set Go environment
 export GOROOT=/usr/local/go
-export GOOS=darwin
+#export GOOS=darwin
+export GOOS=`uname -s`
 export GOARCH=amd64
 
 export RBXOPT=-X19
@@ -50,5 +58,5 @@ export HISTSIZE=5000
 export HISTIGNORE="&:ls:exit"
 
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/cuda/bin:${PATH}:${SCALA_HOME}/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/cuda/bin:${PATH}:${GOROOT}/bin:${SCALA_HOME}/bin:${HOME}/local/bin
 export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
