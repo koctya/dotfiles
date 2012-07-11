@@ -22,7 +22,7 @@
 [apply]
 	whitespace = nowarn
 [gui]
-        recentrepo = /Users/klandrus/Projects/Blueprint/vagrant/midpoint/dev
+  recentrepo = /Users/klandrus/Projects/Blueprint/vagrant/midpoint/dev
 [core]
 	editor = emacs
 	pager = less -XRMI
@@ -31,3 +31,7 @@
 [diff]
 	  ignoresubmodules = untracked
 #    external = /usr/bin/opendiff
+#    You can use "git difftool" instead of "git diff" in all newer versions of git. That will open up a visual diff program.
+[difftool "any-name"]
+#    cmd = "\"C:/path/to/my/ext/diff.exe\" \"$LOCAL\" \"$REMOTE\""
+
