@@ -142,3 +142,68 @@ But we want to load in all the settings from `config.yml`, so manual ain't gonna
     # inside MyApp::Application class
     YAML.load_file("#{Rails.root}/config/config.yml").each { |k,v| config.send "#{k}=", v }
 
+### New Gem: Rack-noIE6
+18 Apr 2009
+Many web developers are discontinuing support for IE6. I, happily, am one of them (unless a client demands it). The other day I went searching for an IE6 detection and redirect solution to aide in my un-support of the browser. What I found was pretty rad.
+
+Now that Rails is on Rack, dozens of useful middleware apps are being developed and can be plugged into Rails with ease. Thanks to a simple GitHub search, I found the [rack-noie](http://github.com/juliocesar/rack-noie/tree/master) project by Julio Cesar.
+
+His middleware did almost exactly what I wanted except for a few small things. First, I prefer using gems with Rails so dependencies can easily be managed using config.gem. Second, we're just hating on IE6, not IE in general. Therefore, the name is a bit misleading.
+
+So, in the spirit of open-source, I forked his project and molded it to my liking. You can see the shiny new rack-noie6 gem's GitHub page here.
+
+Its dead simple to integrate. First, install the gem
+
+    gem install rack-noie6
+
+Next (if you're using Rails), add the following to environment.rb inside the Rails::Initializer.run block:
+
+    config.gem 'rack-noie6', :lib => 'noie6'
+    config.middleware.use "Rack::NoIE6"
+
+As the IE6-BraveHeart would proclaim: FREEEEDOMMMM!
+
+### Dead Simple Rails Deployment
+
+Deploying a Rails app used to suck. Reverse proxies, Mongrel clusters, Monit, etc. Capistrano helped out a lot (once you set it up the first time), but all in all the process was still pretty painful.
+
+Thankfully, a couple of technologies have come along and made my deployment process a whole lot easier.
+
+1. Passenger This was the big one. The Phusion guys' "Hello World" app (as they called it) has really had a positive impact on the Rails community, and me personally. Suddenly my Rails (and Rack) web apps are first class citizens to Apache (and Nginx), which means I can just point a virtual host at the public directory and go. I had almost forgotten how good it feels to just drop some files in a directory and have Apache serve them.
+2. Git Ok, so maybe Subversion allows a similar workflow, but for some reason Git is one of those tools that is so much fun to use that it makes me think of different ways I can use it.
+
+#### My Flow
+
+How I deploy these days (when I'm not deploying to Heroku) is dead simple. I host my private Git repos using Gitosis, but the same would work with GitHub or any Git server.
+
+#### Initial Setup
+
+1. Clone the repository on production server.
+2. Create database.yml and any other production-specific configs
+3. Configure an Apache virtual host pointing to "public" folder of the repository
+#### Deploys
+
+locally:
+
+    jerod@mbp:~$ git push origin master
+
+remotely:
+
+    jerod@mbp:~$ git pull origin master && touch tmp/restart.txt
+
+I know what you're thinking, "Wow, that is dead simple". It's even easier by using Capistrano to execute the remote commands. Here is an example Capistrano task from one of my Rails apps:
+
+    task :deploy, :roles  => :production do
+      system "git push origin master"
+      cmd = [ "cd #{root_dir}", "git pull", "touch tmp/restart.txt" ]
+      run cmd.join(" && ")
+    end
+
+This task can be extended to automatically install required gems, update Git submodules, migrate the database, and so on.
+
+#### Other Benefits
+
+Besides the simplicity and ease of deployment in this process, I have also enjoyed the ability to make edits in production and pull them back in to my development environment. And because my production environment has a complete history of code changes, it is trivial to revert commits that cause major problems.
+
+This work flow is by no means a panacea. How do you handle deployment?
+
