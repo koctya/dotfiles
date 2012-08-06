@@ -20,6 +20,7 @@ alias lg='git lg'
 
 # git
 alias gl='git lg'
+alias ga='git add -p'
 alias gp='git push'
 alias gd='git diff'
 alias gc='git commit -m'
@@ -43,6 +44,10 @@ alias rake='bundle exec rake'
 
 # commands starting with % for pasting from web
 alias %=' '
+
+### PostgreSQL ###
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 # Make grep more user friendly by highlighting matches
 # and exclude grepping through .svn folders.

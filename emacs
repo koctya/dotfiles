@@ -4,6 +4,9 @@
 ;loads ruby mode when a .rb file is opened.
 (autoload 'ruby-mode "ruby-mode" "Major mode for editing ruby scripts." t)
 (setq auto-mode-alist  (cons '(".rb$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '(".ru$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '(".rake$" . ruby-mode) auto-mode-alist))
+(setq auto-mode-alist  (cons '("Gemfile" . ruby-mode) auto-mode-alist))
 ;(setq auto-mode-alist  (cons '(".rhtml$" . html-mode) auto-mode-alist))
 ;You must turn on font-lock-mode. Try M-X font-lock-mode after you have opened a ruby file
 (global-font-lock-mode 1)

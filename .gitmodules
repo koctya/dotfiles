@@ -46,3 +46,6 @@
 [submodule "emacs.d/vendor/rinari"]
 	path = emacs.d/vendor/rinari
 	url = https://github.com/eschulte/rinari
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
