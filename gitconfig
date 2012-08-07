@@ -1,6 +1,7 @@
 [user]
 	name = Kurt Landrus
 	email = klandrus@gmail.com
+
 [color]
 	diff = auto
 	status = auto
@@ -8,6 +9,7 @@
 	interactive = auto
   ui = true
   pager = true
+
 [alias]
 	ci = commit
 	co = checkout
@@ -15,23 +17,36 @@
 	b = branch
   l = log
   d = diff
+  cp = cherry-pick -x               # grab a change from a branch
   cmesg = log --pretty=format:"%s"
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   wipe = "!git reset --hard;git clean -fd"
 	w = whatchanged
+  sl = stash list                   # list stashes
+
 [apply]
 	whitespace = nowarn
+
 [gui]
   recentrepo = /Users/klandrus/Projects/Blueprint/vagrant/midpoint/dev
+
+[push]
+  # 'git push' will push the current branch to its tracking branch
+  # the usual default is to push all branches
+  default = tracking
+
 [core]
 	editor = emacs
 	pager = less -XRMI
+
 [github]
 		user = koctya
+
 [diff]
 	  ignoresubmodules = untracked
 #    external = /usr/bin/opendiff
 #    You can use "git difftool" instead of "git diff" in all newer versions of git. That will open up a visual diff program.
+
 [difftool "any-name"]
 #    cmd = "\"C:/path/to/my/ext/diff.exe\" \"$LOCAL\" \"$REMOTE\""
 

@@ -207,3 +207,148 @@ Besides the simplicity and ease of deployment in this process, I have also enjoy
 
 This work flow is by no means a panacea. How do you handle deployment?
 
+## Unobtrusive JavaScript
+
+Rails 3 now implements all of its JavaScript Helper functionality (AJAX submits, confirmation prompts, etc) unobtrusively by adding the following HTML 5 custom attributes to HTML elements.
+
+- data-method – the REST method to use in form submissions.
+- data-confirm – the confirmation message to use before performing some action.
+- data-remote – if true, submit via AJAX.
+- data-disable-with – disables form elements during a form submission
+
+Rails 3 makes it easy to convert any form to AJAX. First, open your _form.html.erb partial in app/views/posts, and change the first line from:
+
+      <%= form_for(@post) do |f| %>
+to
+
+        <%= form_for(@post, :remote => true) do |f| %>
+
+The attribute is data-remote="true", and the Rails UJS JavaScript binds to any forms with that attribute and submits them via AJAX instead of a traditional POST.
+
+The most common way of handling a return from an AJAX call is through the use of JavaScript ERB files. These work exactly like your normal ERB files, but contain JavaScript code instead of HTML. Let’s try it out.
+The first thing we need to do is to tell our controller how to respond to AJAX requests. In posts_controller.rb (app/controllers) we can tell our controller to respond to an AJAX request by adding
+
+    format.js
+
+in each respond_to block that we are going to call via AJAX. For example, we could update the create action to look like this:
+
+    def create
+        @post = Post.new(params[:post])
+
+        respond_to do |format|
+          if @post.save
+            format.html { redirect_to(@post, :notice => 'Post created.') }
+            format.js
+          else
+            format.html { render :action => "new" }
+            format.js
+          end
+        end
+    end
+
+Because we didn’t specify any options in the respond_to block, Rails will respond to JavaScript requests by loading a .js ERB with the same name as the controller action (create.js.erb, in this case).
+
+Now that our controller knows how to handle AJAX calls, we need to create our views. For the current example, add create.js.erb in your app/views/posts directory. This file will be rendered and the JavaScript inside will be executed when the call finishes. For now, we’ll simply overwrite the form tag with the title and contents of the blog post:
+
+    $('body').html("<h1><%= escape_javaScript(@post.title) %></h1>").append("<%= escape_javaScript(@post.content) %>");
+
+#### AJAX Callbacks Using Custom JavaScript Events
+Each Rails UJS implementation also provides another way to add callbacks to our AJAX calls – custom JavaScript events. Let’s look at another example. On our Posts index view `(http://localhost:3000/posts/)`, we can see that each post can be deleted via a delete link.
+
+Let’s AJAXify our link by adding :remote=>true and additionally giving it a CSS class so we can easily find this POST using a CSS selector.
+
+    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete, :remote=>true, :class=>'delete_post' %></td>
+
+Which produces the following output:
+
+    <td><a href="/posts/2" class="delete_post" data-confirm="Are you sure?" data-method="delete" rel="nofollow">Destroy</a></td>
+
+Each rails UJS AJAX call provides six custom events that can be attached to:
+
+- ajax:before – right before ajax call
+- ajax:loading – before ajax call, but after XmlHttpRequest object is created)
+- ajax:success – successful ajax call
+- ajax:failure – failed ajax call
+- ajax:complete – completion of ajax call (after ajax:success and ajax:failure)
+- ajax:after – after ajax call is sent (note: not after it returns)
+
+In our case we’ll add an event listener to the ajax:success event on our delete links, and make the deleted post fade out rather than reloading the page. We’ll add the following JavaScript to our application.js file.
+
+    $('.delete_post').bind('ajax:success', function() {
+        $(this).closest('tr').fadeOut();
+    });
+
+We’ll also need to tell our posts_controller not to try to render a view after it finishes deleting the post.
+
+    def destroy
+      @post = Post.find(params[:id])
+      @post.destroy
+
+      respond_to do |format|
+        format.html { redirect_to(posts_url) }
+        format.js   { render :nothing => true }
+      end
+
+Now when we delete a Post it will gradually fade out.
+
+### UTILIZING JQUERY
+
+##### Remote forms
+
+    form_for(@foo, :remote => true)
+
+The “remote” paramter makes it a UJS form.
+
+##### Remote links
+
+    link_to(“My delete link”, “/delete/me“, data-method” => “delete”, “data-confirm” => “Are you sure?”)
+
+The “data-“ params make it a UJS link.
+
+#### The controller
+
+No more RJS or old faux Prototype helpers. Now instead all you need to do in the controller is include the respond method to handle the xhr request.
+
+    def create
+        @foo = Bar.new(params[:zook])
+        respond_to do |format|
+            if @foo.save
+                format.js {} # this handles the xhr request
+                format.html # for rendering regular html
+            end
+        end
+    end
+
+The line for format.js handles the xhr request telling the app to render the view “create.js.erb.” So if you don’t already have the that file, create it now as the next step is to write some custom JavaScript.
+
+#### The JavaScript
+
+This is where the magic and customization comes in with the new Rails 3 UJS setup. Here you can write any custom Javascript to handle the callback methods with what the server returns.
+
+Handling the callto
+
+The rails.js file only contains the ability to perform on what to do when you throw AJAX methods to it such as the standard beforeSend, success, complete, or error. This way you can write any custom functions to interact with these callbacks. Here is a base structure of how to handle just that:
+
+    $(“#my_remote_form”)
+        .bind("ajax:beforeSend", function(){
+            // Things to do before sending
+        })
+        .bind(“ajax:complete”, function(){
+            // Things to do after the ajax is sent
+        })
+        .bind(“ajax:success”, function(){
+            // Things to do when it’s a successful call
+        })
+        .bind("ajax:beforeSend", function(){
+            // Things to do for an error
+        });
+
+The beforeSend action is great for letting the user know that something is happening. This can be done by changing the value of the submit button or adding a nice AJAX spinner graphic.
+
+Handling the server callback
+
+So the object was successfully saved to the database, now let’s take the data returned and append it to the DOM with an animation signifier.
+
+    $(“#foo_list”).prepend(“<%=escape_javascript(render :partial=>’foo/bar_item’) %>");
+    $(“#foo_list”).effect(“bounce”, { times:3 }, 300);
+
