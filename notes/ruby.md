@@ -123,3 +123,110 @@ I used to write that method a lot too. Did you know Ruby has a built-in method t
 So, stop writing your own little method and just abort it:
 
     abort "Oh noes, file doesn't exist!" unless File.exist?(file)
+
+### Fluentd
+
+Install
+    gem install fluentd
+
+Find plugins;
+    gem search -rd fluent-plugin
+
+#### Fluent plugins
+
+fluent-plugin-amqp (0.0.0)
+    Author: Hiromi Ishii
+    Homepage: http://github.com/konn/fluent-plugin-amqp
+
+    AMQP input/output plugin or fluentd
+
+fluent-plugin-hoop (0.1.4)
+    Author: TAGOMORI Satoshi
+    Homepage: https://github.com/fluent/fluent-plugin-hoop
+
+    Cloudera Hoop (Hadoop HDFS HTTP Proxy) plugin for Fluent event
+    collector
+fluent-plugin-http-enhanced (0.0.4)
+    Author: Abhishek Parolkar
+    Homepage: https://github.com/parolkar/fluent-plugin-http-enhanced
+
+    Enhanced HTTP input plugin for Fluent event collector
+fluent-plugin-kestrel (0.2.2)
+    Author: Junichiro Takagi
+    Homepage: http://github.com/tjun/fluent-plugin-kestrel
+
+    fluentd input/output plugin for kestrel.
+fluent-plugin-mongo (0.6.7)
+    Author: Masahiro Nakagawa
+    Homepage: https://github.com/fluent/fluent-plugin-mongo
+
+    MongoDB plugin for Fluent event collector
+fluent-plugin-pghstore (0.1.2)
+    Author: WAKAYAMA Shirou
+    Rubyforge: http://rubyforge.org/projects/fluent-plugin-pghstore
+    Homepage: https://github.com/shirou/fluent-plugin-pghstore
+
+    Output to PostgreSQL database which has a hstore extension
+fluent-plugin-resque (0.2.1)
+    Author: Yuichi Tateno
+    Homepage: https://github.com/hotchpotch/fluent-plugin-resque
+
+    Resque enqueue plugin
+fluent-plugin-s3 (0.2.2)
+    Author: Sadayuki Furuhashi
+    Homepage: https://github.com/fluent/fluent-plugin-s3
+
+    Amazon S3 output plugin for Fluent event collector
+
+fluent-plugin-solr (0.1.1)
+    Author: Nobutaka Nakazawa
+    Homepage: http://github.com/btigit/fluent-plugin-solr
+
+    Solr output plugin for Fluent event collector
+
+## Colorful Ruby Code In HTML Using CodeRay
+
+#### Install the CodeRay gem
+
+First we need to install the CodeRay gem.
+
+      gem install coderay
+
+Colorize That Code
+
+The CodeRay gem is very feature rich, but here is a simple out-the-box example that will colorize our code for syntax highlighting...
+
+    ruby -e '
+         require "coderay";
+         filename = "app/controllers/home_controller.rb";
+         print CodeRay.scan_file(filename).div
+    '
+
+This example will output HTML with inline CSS. This is a good quick and dirty way to get to colorized code, but your front-end CSS person, who likes clean HTML, will probably hate you. Replacing the ".div" with ".html" will not include the CSS and it will be up to you to provide the style for the CSS classes.
+
+Take It Out Of The Oven
+
+Here is what the colorized code will look like on your blog, webpage or presentation...
+
+`class HomeController < ApplicationController
+
+  FEATURE_ICONS_DIRECTORY = File.join::(Rails.root, "public/img/feature-icons")
+
+  def index
+    # Find all the images in the "feature-icons" directory, strip off
+    # the directory and extension, to just leave a list of icon names
+    @feature_names =
+      Dir.entries(File.join(FEATURE_ICONS_DIRECTORY)).
+        reject { |f| ! f.end_with? ".png" }.
+        map    { |f| f.split(".")[0] }.
+        sort
+  end
+end`
+
+And there it is. Not much more to say about that other than how easy it was. Although it was easy the CodeRay gem is very rich.
+
+####Resources
+
+[CodeRay Official Website](http://coderay.rubychan.de/)
+[CodeRay on GitHub](https://github.com/rubychan/coderay)
+[More CodeRay examples (1470 of them!)](http://coderay.rubychan.de/rays)

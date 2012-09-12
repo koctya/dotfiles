@@ -5,7 +5,7 @@
 ;; This is first thing to get loaded.
 ;;
 ;; "Emacs outshines all other editing software in approximately the same
-;; way that the noonday sun does the stars. It is not just bigger and 
+;; way that the noonday sun does the stars. It is not just bigger and
 ;; brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
@@ -23,6 +23,10 @@
 
 (setq custom-file "~/.emacs.d/kal/custom.el")
 (load custom-file 'noerror)
+
+;; go mode
+(setq load-path (cons "/usr/local/go/misc/emacs" load-path))
+(require 'go-mode-load)
 
 (load "kal/env")
 (load "kal/global")
@@ -56,6 +60,7 @@
 ;; (load "kal/iswitchb")
 
 (vendor 'ruby-mode)
+(vendor 'go-mode)
 ;(vendor 'rinari)
 (load "kal/haml-mode")
 (load "kal/sass-mode")

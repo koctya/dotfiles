@@ -42,6 +42,9 @@ alias cuke='bundle exec cucumber -c -r features'
 alias b='bundle exec'
 alias rake='bundle exec rake'
 
+# Serve the contents of the current directory over HTTP
+alias serve="ruby -rwebrick -e\"s = WEBrick::HTTPServer.new:)Port => 3333, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""
+
 # commands starting with % for pasting from web
 alias %=' '
 

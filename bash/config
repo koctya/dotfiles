@@ -47,8 +47,10 @@ shopt -s histappend
 # Set Go environment
 export GOROOT=/usr/local/go
 #export GOOS=darwin
-export GOOS=`uname -s`
+export GOOS=linux
+#export GOOS=`uname -s`
 export GOARCH=amd64
+export GOPATH=$HOME/code/golang
 
 export RBXOPT=-X19
 
