@@ -14,7 +14,8 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-
+; allows syntax highlighting to work
+ (global-font-lock-mode 1)
 ;;; --- start original kal.el
 
 (add-to-list 'load-path "~/.emacs.d/vendor")
@@ -28,6 +29,15 @@
 (setq load-path (cons "/usr/local/go/misc/emacs" load-path))
 (require 'go-mode-load)
 
+(global-auto-revert-mode t)
+
+;; showoff mode
+;;(add-to-list 'load-path "~/.emacs.d/vendor/showoff-mode")
+;;(require 'showoff-mode)
+;;(add-to-list 'auto-mode-alist '("\\.md$" . showoff-mode))
+
+
+(load "kal/ecb")
 (load "kal/env")
 (load "kal/global")
 (load "kal/defuns")
@@ -51,6 +61,7 @@
 (load "kal/mac")
 (load "kal/server-mode")
 (load "kal/shell-mode")
+(load "kal/markdown-mode")
 (load "kal/private" 'noerror)
 ;(load 'kal/color-theme)
 ;(load 'maxframe)
@@ -60,7 +71,7 @@
 ;; (load "kal/iswitchb")
 
 (vendor 'ruby-mode)
-(vendor 'go-mode)
+;(vendor 'go-mode)
 ;(vendor 'rinari)
 (load "kal/haml-mode")
 (load "kal/sass-mode")
@@ -73,7 +84,7 @@
 (vendor 'magit         'magit-status)
 ;;(vendor 'psvn          'svn-status)
 ;;(vendor 'js2-mode      'js2-mode)
-(vendor 'markdown-mode 'markdown-mode)
+;(vendor 'markdown-mode 'markdown-mode)
 ;;(vendor 'textile-mode  'textile-mode)
 ;;(vendor 'csv-mode      'csv-mode)
 (vendor 'yaml-mode     'yaml-mode)
@@ -97,3 +108,25 @@
     (require 'yasnippet) ;; not yasnippet-bundle
     (yas/initialize)
     (yas/load-directory "~/.emacs.d/plugins/yasnippet-0.6.1c/snippets")
+
+(add-to-list 'auto-mode-alist '("Guardfile" "Rakefile" . ruby-mode))
+
+(add-hook 'c-mode-common-hook
+               (lambda ()
+                (font-lock-add-keywords nil
+                 '(("\\<\\(FIXME\\|TODO\\|BUG\\):" 1 font-lock-warning-face t)))))
+
+;; cycle through buffers with Ctrl-Tab (like Firefox)
+(global-set-key (kbd "<C-tab>") 'bury-buffer)
+
+;;showing trailing whitespace
+(add-hook 'makefile-mode-hook
+  (lambda()
+    (setq show-trailing-whitespace t)))
+
+;;showing line numbers
+;;(add-hook 'ruby-mode-hook
+;;  (lambda() (linum-mode 1)))
+
+;;(autoload 'linum-mode "linum" "toggle line numbers on/off" t)
+;;(global-set-key (kbd "C-<f5>") 'linum-mode)

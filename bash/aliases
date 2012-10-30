@@ -18,16 +18,19 @@ alias c='git commit -v $@'
 alias ac='git add .;c $@'
 alias lg='git lg'
 
+# go
+
 # git
 alias gl='git lg'
 alias ga='git add -p'
 alias gp='git push'
 alias gd='git diff'
-alias gc='git commit -m'
+alias gcm='git commit -m'
 alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
+alias gmerge='git merge --no-ff'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
 
@@ -41,6 +44,7 @@ alias rst='touch tmp/restart.txt'
 alias cuke='bundle exec cucumber -c -r features'
 alias b='bundle exec'
 alias rake='bundle exec rake'
+alias dbp="rake db:reset && rake db:populate && rake db:test:prepare"
 
 # Serve the contents of the current directory over HTTP
 alias serve="ruby -rwebrick -e\"s = WEBrick::HTTPServer.new:)Port => 3333, :DocumentRoot => Dir.pwd); trap('INT') { s.shutdown }; s.start\""

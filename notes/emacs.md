@@ -85,3 +85,164 @@ Everyone has a different set of commonly used commands. Whatever features of Ema
 Users may bind C-c [any letter] for their own use, and all major and minor modes are supposed to respect that.
 
 More information about [key bindings](http://www.gnu.org/software/emacs/manual/html_node/emacs/Key) and [key binding conventions.](http://www.gnu.org/software/emacs/manual/html_node/elisp/Key-Binding-Conventions.html)
+
+### ido-mode
+In Emacs if you want to open a file you would type C-x C-f and the Find File would appear in the mini buffer
+
+The package is called ido-mode and can be enabled by the following steps.
+
+Type M-x customize-variable <RET> ido-mode <RET>
+Move the cursor to the Value Menu and hit return
+Select 2 from the options and move the cursor over to “Save for Future Sessions” and hit return. This will persist the changes in your ~/.emacs file.
+Now go back and try to open a file. You will see that all the available files in that directory are listed in the mini buffer.
+
+saved changes to custom.el
+
+    (custom-set-variables
+      ;; custom-set-variables was added by Custom.
+      ;; If you edit it by hand, you could mess it up, so be careful.
+      ;; Your init file should contain only one such instance.
+      ;; If there is more than one, they won't work right.
+     '(ido-mode (quote both) nil (ido)))
+    (custom-set-faces
+      ;; custom-set-faces was added by Custom.
+      ;; If you edit it by hand, you could mess it up, so be careful.
+      ;; Your init file should contain only one such instance.
+      ;; If there is more than one, they won't work right.
+     )
+
+ENABLE IDO EVERYWHERE
+Add this to your .emacs file:
+
+    (setq ido-enable-flex-matching t)
+    (setq ido-everywhere t)
+    (ido-mode 1)
+
+That’ll enable basic Ido support for files and buffers and the very useful “flex matching” as well.
+
+### Have Emacs auto-refresh all buffers when files have changed on disk
+
+(global-auto-revert-mode t) in your .emacs.
+
+(global-)auto-reverse-mode will not revert a file if the corresponding buffer is modified, so there should be no risk of you losing unsaved changes.
+
+
+## [EmacsNiftyTricks](http://www.emacswiki.org/emacs/EmacsNiftyTricks)
+
+### MovingTheCtrlKey
+#### Gnome Desktop Environment
+
+Recent versions of the Gnome desktop have a Keyboard Preferences dialog that allows you to configure the Ctrl key position. On Ubuntu this is found under System → Preferences → Keyboard. Under the “Layout Options” tab choose “Ctrl key position” and it gives you a number of choices.
+
+#### X (using xkb)
+
+In the X Window System, you can also swap Control and Caps Lock with the xkb option ctrl:swapcaps. If you don’t ever need Caps Lock you can instead of swapping the two set Caps Lock to be another Control. This is done with ctrl:nocaps. Use one of these from command line:
+
+  setxkbmap -option ctrl:swapcaps     # Swap Left Control and Caps Lock
+  setxkbmap -option ctrl:nocaps       # Make Caps Lock a Control key
+Note that the above will change your keyboard layout to a us keyboard layout. If it is not a US keyboard layout, you need to add a switch with your layout, like:
+
+  setxkbmap -layout gb -option ctrl:nocaps # Caps Lock is Control on a GB keyboard
+If you don’t know your keyboard layout name, I think it is always the second value inside the xkb_symbols include line if you setxkbmap -print, so this command should preserve it for you:
+
+  setxkbmap -layout "$(setxkbmap -print | awk -F + '/xkb_symbols/ {print $2}')" -option ctrl:nocaps
+You can put this command in your ~/.xsession, ~/.gnomerc or whatever. If you can edit the X configuration file, you might do it system-wide:
+
+  Section "InputDevice"
+    Driver "keyboard"
+    Option "XkbRules" [...]
+    Option "XkbOptions" "ctrl:nocaps"
+If above setting does not work, try this one(nowadays Xorg prefers):
+
+Section "InputClass"
+    Identifier            "Keyboard Setting"
+    MatchIsKeyboard       "yes"
+    Option                "XkbOptions" "ctrl:swapcaps"
+EndSection
+
+In Fedora 15 you can also add a file ~/.Xkbmap that contains command line arguments to setxkbmap. These will be used when you next log in.
+
+-option ctrl:swapcaps
+The [CapsKey](http://www.emacswiki.org/emacs/CapsKey) page has an example of moving Ctrl to Caps.
+
+#### OS X
+
+Open System Preferences → Keyboard and choose Modifier Keys:
+
+#### Microsoft Windows
+
+Registry
+
+Applies across all user accounts.
+Requires Administrator access to write to the registry.
+NoCaps
+
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,1d,00,3a,00,00,00,00,00
+SwapCaps
+
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,1d,00,3a,00,3a,00,1d,00,00,00,00,00
+This can also be done by manually editing the registry to accomplish the same thing, see [1] for an explanation. The Synaptics touchpad driver for Windows reads the unmodified scancodes while ‘PalmTouch?’ is active, so if you switch Ctrl and Capslock you will also have to turn off PalmTouch? if you want to send ‘Ctrl-Taps’ using the touchpad.
+
+You can instead make similar changes to
+
+[HKEY_CURRENT_USER\Keyboard Layout]
+which makes the change for just the current user only.
+
+Keymap
+
+There is a small piece of software called keymap which modifies the registry.
+
+KeyMapper
+
+It seems that keymap.exe does not work on Windows 7. KeyMapper? (http://code.google.com/p/keymapper/) works fine.
+
+In Lisp?
+
+I know this is fairly simple to do for emacs only, but I’ve never looked into how exactly, and Lisp is not my forte. Anyone?
+
+That is doubtful.
+I am able to get the xorg under Cygwin on windows to switch the keys via a command line argument to xwin. Surely then it should be possible to patch emacs to do this at least at the source level. Anyone?
+Also, what do you mean by “last method?” I don’t see a method on here that doesn’t require Administrator access. I’d love to know one.
+I think that when you run emacs through cygwin, it uses its own x server. When you give a command lin e switch to remap keys, you are effectively doing it across all of your X server. It just happens that your X server is only running emacs.
+As far as I know, X does not allow per-application custom keybindings.
+EmacsW32 , with w32-enable-caps-lock set to nil , reads that key as <capslock>. It should be possible to tell Emacs to treat it as a control. (define-key function-key-map [(capslock)] ‘event-apply-control-modifier) gets close.
+Drivers
+
+There are also these drivers: ctrl2cap.sys or ctrl2cap.vxd.
+
+http://www.gnu.org/software/emacs/windows/faq3.html#capscontrol has more info about this.
+
+Microsoft also provides an utility Ctrl2Cap to replace the caps lock with the ctrl key. (Note that you will lose the caps lock.) It allows you to reverse it as well.
+
+## Emacs for Rails
+
+### [Setting up the emacs code browser](http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/6-setting-up-the-emacs-code-browser)
+
+### Improving Ruby Mode
+
+In both Emacs 23 and 22, if you set things up as above there are a few annoyances with ruby-mode. Mainly, it does not auto-indent the next line after you hit return, meaning you have to press tab each time. To fix it, add the following block to your _emacs file:
+
+    (add-hook 'ruby-mode-hook
+      (lambda()
+        (add-hook 'local-write-file-hooks
+                  '(lambda()
+                     (save-excursion
+                       (untabify (point-min) (point-max))
+                       (delete-trailing-whitespace)
+                       )))
+        (set (make-local-variable 'indent-tabs-mode) 'nil)
+        (set (make-local-variable 'tab-width) 2)
+        (imenu-add-to-menubar "IMENU")
+        (define-key ruby-mode-map "\C-m" 'newline-and-indent) ;Not sure if this line is 100% right!
+     ;   (require 'ruby-electric)
+     ;   (ruby-electric-mode t)
+        ))
+
+This code makes ruby-mode much better, but I don't pretend to be an expert on it!
+

@@ -230,3 +230,23 @@ And there it is. Not much more to say about that other than how easy it was. Alt
 [CodeRay Official Website](http://coderay.rubychan.de/)
 [CodeRay on GitHub](https://github.com/rubychan/coderay)
 [More CodeRay examples (1470 of them!)](http://coderay.rubychan.de/rays)
+
+## misc
+`module PlatformDetection
+  def mri?
+    !defined?(RUBY_ENGINE) || (defined?(RUBY_ENGINE) && ("ruby" == RUBY_ENGINE))
+  end
+
+  def rubinius?
+    defined?(RUBY_ENGINE) && (RUBY_ENGINE == 'rbx')
+  end
+end
+`
+
+`spec/spec_helper`
+
+`$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+
+require 'bundler'
+Bundler.setup(:default, :test)
+`

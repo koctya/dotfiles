@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
-# . ~/.zsh/config
+. ~/.zsh/config
 . ~/.zsh/aliases
 . ~/.zsh/completion
 
@@ -46,6 +46,6 @@ source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
 
-[[ -s "/Users/kal/.rvm/scripts/rvm" ]] && source "/Users/kal/.rvm/scripts/rvm" # This loads RVM into a shell session.
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm" # This loads RVM into a shell session.

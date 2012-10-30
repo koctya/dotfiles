@@ -1,0 +1,517 @@
+Ruby 1.9 Walkthrough
+
+INTRO
+  - Welcome to the Ruby 1.9 Walkthrough
+    - A walkthrough or a review, if you will, of how Ruby 1.9.2/3 compares to Ruby 1.8.7
+    - I've gone through and tried 100s of things on Ruby 1.8.6, 1.8.7, and 1.9.2 to see what has changed
+    - Matz quote
+    - Many of the videos and blog posts about 'what's new in Ruby 1.9' are out of date because some decisions were reversed
+      or because they were written when 1.8.6 was out, but then stuff got backported to 1.8.7
+      enumerators, for example!
+    - OK, enough of my face :-)
+    - Who Is Peter Cooper?
+    - NOT A TUTORIAL
+      - This is not a 'tutorial' on most of the aspects covered. I expect you to know Ruby.
+      - I'm covering new features, removed features, and changes you need to be aware of.
+      - To fully learn how to use everything, you'll need to rely on other tutorials and references.
+      - Nonetheless, I'll try and show you the basics on as much as I can.
+  - This video is VERY extensive
+    - so there may be details I get wrong
+    - I'll be maintaining errata
+    - Once I have enough, I'll reshoot parts of the video and send an update through
+  - Ruby 1.9 has had an interesting history
+    - Ruby 1.9 first became the de facto official 'production' release of MRI Ruby in January 2009 (Jan 30th 2009)
+    - At the time of recording, that's almost 3 years ago
+    - Originally a development only release in the UNIX numbering tradition (1.9.0 with intention for 2.0 to be the next big thing)
+    - But it became the official production release as of 1.9.1
+  - History of 1.9
+    - One of the biggest changes in 1.9 vs 1.8 is the YARV (Yet Another Ruby VM) VM, built in great part by Koichi Sasada.
+      - sometimes MRI is called KRI (Koichi's Ruby Interpreter) due to this
+      - but MRI is generally accepted to be any of the de facto 'official' Ruby implementations, 1.8 or 1.9 nowadays
+    - The oldest build of 1.9.0 I can find is from Xmas Day 2003
+      - significant since Ruby 1.8.0 was only released on August 4, 2003 :-)
+      - but things didn't serious from a regular developer's POV until..
+    - On November 4, 2006, Koichi Sasada posted to ruby-core about the plan of merging YARV into Ruby, essentially the birth of Ruby 1.9
+    - Ruby 1.9.0 released, Xmas Day 2007
+    - Ruby 1.9.1 released, January 30, 2009
+      - the first 1.9 considered 'production' after a change of versioning policy
+      - quite crash happy
+      - http://isitruby19.com/ came out around this time to let people see which gems worked on 1.9
+    - Ruby 1.9.2 released, August 18, 2010
+      - finally stable
+      - 1.9.2 passed 99% of RubySpec
+      - lots of new bits and pieces
+      - quite a lot of stuff covered in this video was new in 1.9.2
+    - Ruby 1.9.3 is on the way, preview 1 was released on August 1, 2011
+      - not as significant a leap as 1.9.2
+      - most of this video will about 1.9.2 as compared to 1.8.7
+      - but with a brief 1.9.3 specific section on the end
+  - Ruby 1.9 support varies between implementations
+    - MRI fine
+    - MacRuby is 1.9
+    - Rubinius is very close to a 1.9 compliant release as of this recording
+    - JRuby has a 1.9 option, some elements differ or aren't present
+    - We're focusing on MRI here
+
+OUR JOURNEY - CONTENTS
+
+SOME KEY CHANGES
+  - new VM (YARV - Yet Another Ruby VM)
+    - discussed previously
+  - It's fast
+    - "Benchmarks by Antonio Cangiano showed an average four times speed improvement over the original interpreter"
+    - But it varies a lot
+    - In the "real world" certain types of app (like Rails apps) can seem barely any faster for a crazy number of reasons
+    - instead of just AST created and interpreted..
+    - actually compile AST down to opcodes for a virtual machine
+    - much more efficient and requires less traversal of the syntax tree
+    - symbol table compaction
+    - object compaction (not much about this)
+  - RubyGems is now built in
+    - 1.9.2 comes with 1.3.7
+    - 1.9.3 comes with 1.8.6
+  - load path ($:, $LOAD_PATH) doesn't include '.'
+    - require_relative
+    - or require './whatever' (where relevant)
+  - new hash syntax  { a: 10, b: 20 }
+  - character encoding
+  - threads now use real system level threads but still have GIL
+  - fibers
+  - continuations are GONE in 1.9! :-) (this is a good thing) - callcc { }
+    - well, a white lie really.. require 'continuation' will get em back
+
+GETTING RUBY 1.9
+  - Sticking to MRI, if you want
+  - Linux
+  - OS X (doesn't come with 1.9 yet)
+  - RVM - http://beginrescueend.com/
+  - ruby-build by Sam Stephenson of 37signals - https://github.com/sstephenson/ruby-build
+  - Windows
+    - http://rubyinstaller.org/
+    - http://railsinstaller.org/
+
+STRINGS
+  - character based rather than just byte based
+  - no longer has #each (like #each, use #each_line/lines instead)
+  - "abc"[0]
+  - ?c == "c"
+  - "A".ord == 65
+  - STRING3[0].ord
+  - STRING3.ord
+  - STRING3.codepoints.first
+  - as in Ruby 1.8.7 we can use #bytes to get a byte by byte enumerator but..
+  - #getbyte #setbyte
+    - STRING3.setbyte(2, 167); STRING3
+  - #clear clears it out
+  - #unpack now supports block run for each part of the pack format
+    - decodes a string, often binary data, according to a format string
+    - "abc".unpack("c*") { |i| puts i }
+
+
+Character Encoding
+  - In the good old days of Ruby 1.8, everything was pretty much treated as ASCII or 'raw' binary data
+  - Problem is, we often want to access stuff that isn't in ASCII's limited character set
+  - Thankfully, the Unicode standard exists, as well as the UTF-8 character encoding standard, one way of representing Unicode characters
+  - Ruby 1.9 now has direct support for using any of MANY different character encoding systems!
+  - STRING2.length / STRING3.length
+  - use STRING3 (contains katakana)
+    [0] [1] etc
+  - $KCODE='u'; STRING3.chars.to_a
+  - $KCODE gone (well, no longer effective)
+    - only supported 'none', 'euc', 'shift_jis', and 'utf-8'
+  - String#bytesize #length #encoding
+  - /\x80/u bad in 1.9, good in 1.8
+  - 'x'.encoding.name
+  - .force_encoding('utf-8')
+    - will force change internally but doesn't convert anything
+  - .encode will recode
+    "çé".encode("iso-8859-1")
+    "çé".encode("iso-8859-1").bytes.to_a
+    "çé".encode("utf-8").bytes.to_a
+  - s = "ウabcé".encode("iso-8859-1", undef: :replace, replace: "ARGH!")
+    puts s.encode("utf-8")   # => ARGH!abcé
+    - :undef deals with chars undefined in the destination encoding
+    - :invalid deals with chars that are invalid in the source string (otherwise an exception is raised)
+  - s = "ウabcé".encode("iso-8859-1", xml: :text)
+    puts s.encode("utf-8")   # => &#x30A6;abcé
+  - .valid_encoding? (true for a string which is encoded correctly)
+  - possible to check if an encoding is ascii compatible
+    - "blah".encode("UTF-32LE").encoding.ascii_compatible?
+  - Encoding.list
+  - Encoding.aliases
+  - .each_byte, .each_char, .each_codepoint
+  - use String.method_defined?(:encode) type checks to check before doing definitions to shim stuff
+  - .bytes, .chars, .codepoints, .lines
+  - Source Encoding
+    - __ENCODING__
+    - us-ascii by default
+    - # encoding: utf-8
+      - minimal that will work is # coding:utf-8 but longer variants good for other environments, like emacs
+    - side effect of this is you can use utf-8 characters in actual CODE.. method names, etc.
+  - Encoding.default_external (settable - but will get warning!)
+  - Encoding.default_internal
+  - open('', 'r:UTF-8')  r:ascii  :binary   ascii-8bit
+  - open('', 'r:UTF-16LE:UTF-8')  external:internal
+  - If you want to open a binary file, you need to explicitly use the "b" mode to set binary
+    - or you could even use 'binary' for the encoding
+  - ruby -E can be used to set encodings  external:internal (or just external)
+  - two key tips:
+    - explicitly declare encodings on any IO objects you're opening
+    - add the magic comment to top of all source files
+
+Hashes
+  - new hash syntax
+  - no more {:key, "value", :key2, "value2"} but no one used it anyway
+  - hashes now ordered by insertion order
+  - Hash#index => Hash#key
+    - Hash#index will work but raises a deprecation warning
+  - Hash#select now returns a hash and not an array
+  - Hash#select! added in 1.9.2
+  - Hashes can have default_proc set on the go
+    - HASH.default_proc = proc { {} }; HASH[:abc]
+  - Hash#flatten =>  [:k, 'v', :k2, 'v2']
+  - HASH.assoc(:name)  => [:name, "Fred"]   (uses == internally)
+  - HASH.rassoc("Fred")  => [:name, "Fred"]
+  - HASH.keep_if { |k, v| k =~ /a/ }
+
+Arrays
+  - [1,2,3].to_s
+    - like inspect on 1.9, used to join on 1.8
+  - a=[1,2,3];a[0,0]=nil;a now ADDS nil to start of array
+  - Array#choice in 1.8.7 only becomes Array#sample in 1.9.2
+    - Array#choice only picked one element but sample takes an quantity argument
+  - Array#shuffle works the same
+  - Array#nitems gone .. [1,nil,2].nitems == 2
+    - use .count { |el| !el.nil? }
+  - Array#uniq, uniq! and product can take a block
+    - iterates once for each item
+    - in 1.8.7, block is ignored
+  - inject(:+)
+    - 1.8.7 does support this but worth noting
+
+Procs and Lambdas
+  - Procs are objects that represent code blocks, or anonymous functions (if you will), in Ruby
+  - lambdas are types of procs with slightly different behavior with arguments and returning
+  - #lambda?
+    proc {}.lambda?
+  - proc {} is now a synonym of Proc.new, not lambda
+    - a = lambda { |a, b| }; a.call(1)
+    - a = proc { |a, b| }; a.call(1)
+    - so.. if you're using procs in 1.8, you might hit trouble going to 1.9
+  - ->{}  (new lambda literal syntax)
+  - ->(){}
+  - ->a,b{a+b}
+  - can call with call or [] as before, will look at some new ways shortly
+  - cleaning up of inconsistencies
+    - despite lambdas enforcing arity, they didn't when no params were specified in 1.8
+    - a = lambda { }; a.call(1)
+  - can call with .()
+  - .() will call #call even on non Procs now
+    - doesn't apply to === or [] though due to existing use
+  - === can call procs
+    - handy in case statements
+    - odd = lambda { |a| a % 2 == 1 }; case 11; when odd; "odd"; else; "even"; end
+  - #curry
+    ->a,b{a+b}.curry[10][20]
+  - Proc#source_location
+
+Blocks
+  - block parameters are always local to their block
+  - block vars shadow local vars
+  - block local vars can be defined explicitly |x;t|
+    - a=0;10.times { |i| a = i }; a
+    - vs a=0;10.times { |i;a| a = i }; a
+  - blocks can now accept block arguments (tho this was in 1.8.7 too)
+    - proc { |&b| b.call('hello') }.call { |c| c }
+
+Enumerators and Enumerable
+  - but also backported to 1.8.7
+    - though not on #map and #collect .. so be prepared (on Array and Enumerable)
+  - to_enum
+  - .each with no block
+  - .each.with_index
+    - with_index on 1.9.2 accepts an optional argument to set the starting index
+  - Enumerable#each_with_object
+    - ARRAY.each_with_object({}) { |i, a| a[i] = i }
+  - Enumerator#with_object
+  - Enumerator#feed
+    - will set value for next yield in an enumerator
+  - Enumerator#peek
+    - look at value but don't increment internal position
+      i = ARRAY.each; i.peek; i.peek; i.peek .. will always be the same
+
+Regular Expressions
+  - it's better!
+  - Oniguruma!
+  - POSIX character classes - "abc123" =~ /[[:digit:]]/
+    - can now negate
+    - [[:^alpha:]]
+  - ++ is a new type of repetition  - "aaaabbbb"[/a+[^b]/, 0]
+    + is 1 or more greedy
+    +? is 1 or more non-greedy
+    ++ is 1 or more and 'possessive' .. no backtracking allowed by the parser
+  - (?=) zero width positive lookahead
+    - "this is a test" =~ /t(?=e)/
+  - (?<= ) zero width positive lookbehind
+  - (?!) and (?<!) are opposites of above
+  - Named groups/matches: (?<name>\w+)
+    - "Fred Flintstone".match(/(?<fname>\w+)\s+(?<lname>\w+)/)[:fname]
+    - "Fred Flintstone" =~ /(?<fname>\w+)\s+(?<lname>\w+)/; $~[:fname]
+    - zero length.. {0}
+    - then backreference with \g<matchname>
+    - "Fred Flintstone" =~ /(?<name>\w+){0}(?<fname>\g<name>)\s+(?<lname>\g<name>)/; $~[:lname]
+  - You're hopefully used to "abcde"[/(\w)(\w)(\w)/, 3]
+    - well.. you can do the same with named matches .. "Fred Flintstone"[/(?<fname>\w+)\s+(?<lname>\w+)/, :fname]
+  - Unicode properties
+    - /\p{Space}/
+    - /\p{Digit}/
+    - 'abc' =~ /\p{^Katakana}/
+    - \P{something} == \p{^something}
+  - /[\u0370-\u30FF]/
+
+Threads
+  - real threads but still a GIL (Global Interpreter Lock)
+  - GIL is a mutual exclusion held by one instance of the interpreter to avoid sharing non thread safe code between threads
+  - separate native thread for each Ruby thread
+  - GIL because of thread safeness of external libraries
+  - threads are slower in 1.9 generally since they're native, but the I/O performance can be better due to ability to make blocking system calls
+  - benefits are that IO is now async in threads so another thread can run while IO is occurring
+  - also, C extensions can "release" the lock
+  - threads now support set_trace_func
+    - tracing only works on that thread (may be better than usual global set_trace_func)
+    - add_trace_func allows you to add multiple tracing functions
+
+Fibers
+  - what are fibers?
+    - at one level, they're a lighter weight way of doing concurrency than threads, especially now threads are native threads
+    - fibers are sort of back to the 'green thread' type model of ruby 1.8.
+    - JRuby and Rubinius implement fibers using threads
+      - Ilya Grigorik called these poor man's fibers :-)
+    - fibers are coroutines (essentially subroutines with 'multiple entry points', can stop and restart)
+      that can cooperatively switch between each other
+    - fibers are used internally within Ruby to do the automatic conversion of internal iterators (think of #each) into enumerators and the like
+    - TRPL notes that fibers are an 'advanced and relatively obscure control structure' and..
+    - 'the majority of Ruby programmers will never need to use the Fiber class directly'
+    - but let's still look at a little bit of it to get a feel
+  - Fiber.new do; end  .. #resume   Fiber.yield..
+    - you can only resume fibers in the thread that created them
+    - but you could create multiple threads and give each multiple fibers
+  - raise StopIteration
+  - require 'fiber' .. Fiber.transfer
+
+Time
+  - require 'time'; Time.parse("30/12/2001") .. in 1.9.2 parses as dd/mm/yyyy .. was mm/dd/yyyy in 1.8!
+  - Time.now.monday? .. tuesday?
+  - Time#round .. optional precision (in decimal digits) as arg
+  - Time#subsec .. returns a Rational fraction for the second
+  - year argument of Time.utc (gm, local, mktime) interpreted as literal now.. 99 used to turn into 1999 but no longer
+
+New In Standard Library
+  Json
+    - to_json
+    - JSON.load
+    - j obj  (single liner)
+    - jj obj  (better formatted)
+  YAML
+    - uses either Syck (default)
+    - or Psych (if libyaml on system and Ruby compiled appropriately)
+    - YAML.load
+    - YAML.dump
+    - obj.to_yaml
+  MiniTest
+    - and minitest/spec
+    - test/unit now implemented on top of minitest
+    - minitest much like test/unit but..
+      - randomized test runs
+      - refute_whatever instead of assert_not_whatever
+      - when using minitest, not autorun.. require 'minitest/autorun'
+  FasterCSV vs CSV
+    - params are different, named in hash vs positional
+    - check with if CSV.const_defined? :Reader .. true if not fastercsv
+  FFI
+    - foreign function interface
+  Fiddle
+    - nice wrapper around FFI
+    - libc = DL.dlopen('libc.dylib')
+      f = Fiddle::Function.new(libc['strlen'], [Fiddle::TYPE_VOIDP], Fiddle::TYPE_INT)
+      f.call('hello')  # => 5
+  Rake
+    - but was often included with implementations anyway
+  Tk (windowing toolkit)
+  Ripper
+    - Ripper.sexp
+  Prime
+    - require 'prime'
+      adds stuff to Integer
+      7.prime?
+    - or use direct..
+      a = Prime.each
+      a.next
+      a.next
+  Coverage
+    - checks code coverage
+    - Coverage.start
+      do stuff
+      p Coverage.result
+    - get back an array that shows you which lines were run, which were not, and how many times
+
+Gone From Standard Library
+  - quite a lot of it was cruft, stuff even deprecated well before 1.8.7
+  date2 - derivative of date with some added extras
+  ftools - added some stuff to File.. fileutils does all of it now
+  generator - convert an internal iterator to an external one.. a precursor to enumerators
+  getopts
+  jcode - handle japanese EUC/SJIS strings
+  mailread - email handling, use tmail instead
+  parsedate
+  ping - ping a host using TCP echo
+  readbytes - added IO#readbytes method for reading fixed size data
+  rubyunit
+
+New Syntax and Small Language Elements
+  - Use RUBY_VERSION. VERSION is now gone. RUBY_VERSION works everywhere anyway.
+  - RUBY_ENGINE tells which impl.. "ruby" on MRI
+  - __method__ and __callee__ (same thing - but 1.8.7 got __method__)
+  - File::Stat.new('/etc/passwd').world_readable? (and world_writable?)
+  - $LOAD_PATH can now contain arbitrary objects as long as they implement to_path that returns a string
+  - Many file and directory methods now support non-strings, as long as they support to_path
+    - a = []; def a.to_path; '/etc/passwd'; end; File.open(a)
+  - Object#id finally gone (was deprecated ages ago).. now use object_id
+  - Object#tap - was in 1.8.7 but worth noting just in case..
+  - can now overload negative operators
+    - !, != !~
+  - splat in middle of method args OR multiple assignments
+    - def x(a, *b, c)
+    - a, *b, c = ARRAY; b
+  - multiple splats on the right hand side
+    - a, b, c = *[1, 2], 3
+    - a, b, c, d, e = *[1, 2], 3, *[4, 5]
+  - mandatory arguments now allowed after optional arguments
+    - any supplied arguments 'step' into place
+      - e.g. def x(y = 2, z); p y, z; end
+  - ranges.. member? include? cover?
+    - in 1.8, member? and include? didn't care if elems were ACTUALLY IN THE RANGE (using #succ)
+    - in 1.9, member? and include? DO care but cover? acts like the old way
+  - .methods now an array of symbols
+    - ditto for instance_methods
+    - ditto for instance_variables
+    - ditto for constants
+    - use obj.respond_to?(:) for better coverage
+  - Use Class.method_defined? vs instance_methods.include? (does work in 1.8 still)
+  - attr without args is equivalent to attr_reader
+    - argument works for setting writer too but is 'obsoleted'/deprecated
+  - formal argument cannot be an instance variable (in a block, for example)
+  - nested methods
+  - a = a.new
+         .x
+         .y
+  - a = 2 == 2 ? 'two'          (newline before ternary operator)
+               : 'not two'
+  - BasicObject
+    - Object.ancestors
+    - (try and access Math::PI in a subclass now)
+    - handy for proxies and delegates
+  - Method#source_location (and Proc#source_location - technically UnboundMethod as well)
+  - Symbol#to_proc now built in (as in 1.8.7) -- ARRAY.map(&:next)
+  - Symbol#=~ and !~
+  - Symbol also supports match
+    - Works differently than on strings, returns position match, a la =~
+  - no more Symbol#to_i
+  - Symbol < >
+  - colon not valid in when statements
+  - no longer use colons as separators
+    - if 2 == 2: 2 end
+    - when 2: 2 vs when 2 then 2 (which still works)
+    - or just use ;
+  - %u in formatting strings no longer unsigned, will show -100, etc.
+  - class X; include Math; end; X.const_defined?(:PI) .. true in 1.9, false in 1.8
+    - but optional param added to turn off checking ancestors! use false..
+    - ditto for const_get and method_defined?
+  - Class#class_variable_get (and set) are now public
+    - class X; end; X.class_variable_set(:@@z, 10)
+  - All objects now have define_singleton_method
+    - example: class X; end; X.define_singleton_method(:z) { 10 }; X.z
+  - public_method
+  - public_send
+  - And you can now access singleton classes
+    the old way: (class << X; self; end)
+    new way: X.singleton_class
+    so.. obj.singleton_class == (class << obj; self; end)
+    X.singleton_class.instance_eval { attr_accessor :count }
+  - base64 was removed but came back, but nonetheless..
+    - ['abc'].pack('m')
+    - "YWJj".unpack('m')[0]
+    - ['abc'].pack('m0') .. no newline on the end, complies with RFC4648 which defines base64
+  - Process.daemon
+  - Process.spawn
+    - also available as 'spawn'
+    - executes a given command and returns its PID, it won't wait for the result
+    - env hash (optional)
+    - command  cmdname  or  [cmdname, arg0, arg1]
+    - options (optional)
+      - :unsetenv_others
+      - :pgroup
+      - :rlimit_cpu :rlimit_core :rlimit_data
+      - :umask
+      - :chdir
+      - lots of groovy stuff with redirecting file descriptors
+      - mimic IO.open with  r, w = IO.pipe .. pid = spawn(command, :out => w) .. w.close
+  - Complex(3, 4) == 3 + 4.i
+  - binding.eval
+  - the 'set' standard library now iterates elements in the order in which they were inserted (a la hashes in 1.9)
+    - order was arbitrary in 1.8
+  - the 'set' stdlib also has keep_if and select! methods now
+  - Float::INFINITY == 1.0/0.0
+  - sprintf("%A", 1.234)  .. new formatting type for hexadecimal floating point
+    Float("0X1.3BE76C8B43958P+0") .. accepts hexadecimal floating point
+    %A also supported by scanf stdlib
+  - respond_to? will not deal with 'dynamic' methods implemented in method_missing, etc so..
+    - define respond_to_missing?(meth, include_private)
+    - and respond_to? will use it
+  - no more 'retry' in loops or iterators
+  - The standard library will be in a folder that includes /1.9.1
+    - why? the library is considered a "library compatible version"
+
+Garbage Collection
+  - GC.count  # number of GC runs since process started
+  - GC::Profiler.enable; GC.start; puts GC::Profiler.result
+  - ObjectSpace.count_objects
+  - Ruby 1.9.2 doesn't allow GC tweaking via environment variables.. (without patches, anyway)
+    - In Ruby 1.9.3, you can tweak GC as before:
+      - RUBY_GC_MALLOC_LIMIT=16000000 ruby -e "puts 'hi'"
+    - 1.9.3 might also get ObjectSpace.memsize_of_all
+
+Ruby 1.9.3 Specifics
+  - Again, not going to give the full laundry list
+    - Look at 10-12 different elements that you might trip over
+  - The load.c patch
+    - loading time of Rails 3 apps was a pain in 1.9.2 due to how the require code worked
+    - Xavier Shay wrote a 1000+ line patch that set up a hash to track the load path's state which made things faster
+    - but the core Ruby team instead came up with a smaller patch that 'hacked around' the problem
+    - either way, faster load times (about a 36% drop in times in my experiments)
+  - pathname and date libraries reimplemented in C for faster performance
+    - 5-7x faster on some date benchmarks
+  - Random.rand now accepts a range (Integers only)
+    - In 1.9.2, Random.new.rand(1..10)
+    - but now.. Random.rand(5..9)
+    - and so does regular old rand!  rand(1..10)
+  - Time#strftime supports %:z and %::z formats
+    - old %z does +0100
+    - %:z does +01:00
+    - %::z does +01:00:00
+  - String#prepend prepends a string to another
+    - Happens in place, so be careful
+  - String#byteslice
+    - takes a range or (3,4) where index and quantity
+  - Michael Edgar improved Ripper, made it "closer to being ready to power a full Ruby implementation"
+  - io/console new to the stdlib
+    - adds console detection and manipulation features to IO instances
+  - Ruby's license changed from joint GPLv2 and Ruby license to joint 2-clause BSD and Ruby license
+  - openssl has new maintainers and is supposedly a lot better for it
+  - new encodings
+    - cp950, cp951, utf-16, utf-32
+    - the "LE" variants so far are little endian
+    - unmarked form is big endian by default but can also have byte order marks to determine endianness
+  - File::NULL constant to access null device
+  - lots of work on the "matrix" stdlib
+  - net/http now supports 100 Continue responses

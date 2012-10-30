@@ -52,3 +52,8 @@ To install tree from repos:
    $ pacman -S tree
    # OS X
    $ brew install tree
+
+### GEdit
+Syntax Highlighting
+
+A very useful feature of gedit is the ability to color programming code. Using syntax highlighting makes simple errors easier to recognize. gedit uses the GtkSourceView package for syntax highlighting. The .lang file for a specific programing language is located in the `/usr/share/gtksourceview-2.0/language-specs/` folder. These files may be edited or additional files created to further define the highlighting definitions.

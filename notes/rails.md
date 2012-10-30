@@ -352,3 +352,30 @@ So the object was successfully saved to the database, now let’s take the data 
     $(“#foo_list”).prepend(“<%=escape_javascript(render :partial=>’foo/bar_item’) %>");
     $(“#foo_list”).effect(“bounce”, { times:3 }, 300);
 
+### [RGB Color Values](http://www.htmlhelp.com/cgi-bin/color.cgi?rgb=7FFFD4)
+
+The following color names may safely be used with the FONT element and in a Cascading Style Sheet: aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow.
+
+## 85-yaml-configuration
+
+> I find this configuration very useful as well. Further, I prefer to add a defaults section to the YAML config file, and allow let the other sections to inherit from that.
+
+    yaml
+    defaults: &defaults
+      email: info@example.com
+
+    development:
+      <<: *defaults
+      email: me@example.com
+
+    test:
+      <<: *defaults
+      email: test@example.com
+
+    staging:
+      <<: *defaults
+
+    production:
+      <<: *defaults
+
+

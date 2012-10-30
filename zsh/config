@@ -1,20 +1,46 @@
 . ~/.zsh/functions
 
 export EDITOR='mate_wait'
-export PATH="$HOME/bin:$HOME/.bin:/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
-export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+
+GREP_OPTIONS=
+for PATTERN in .cvs .git .hg .svn; do
+    GREP_OPTIONS="$GREP_OPTIONS --exclude-dir=$PATTERN"
+done
+GREP_OPTIONS="$GREP_OPTIONS --color=auto -s"
+export GREP_OPTIONS
+
+# Set Go environment
+export GOROOT=/usr/local/go
+#export GOOS=darwin
+export GOOS=linux
+#export GOOS=`uname -s`
+export GOARCH=amd64
+export GOPATH=$HOME/code/golang
+
+export SCALA_HOME=/usr/local/typesafe-stack
+export PLATFORM=`uname -s`
+
+typeset -U path
+path=(/usr/local/homebrew/bin /usr/local/bin /usr/local/sbin /usr/local/git/bin ${GOROOT}/bin $path ${HOME}/local/bin {SCALA_HOME}/bin)
+export path
+
+#export PATH="/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:${GOROOT}/bin:$PATH:${HOME}/local/bin:${SCALA_HOME}/bin"
+manpath=(/usr/local/man /usr/local/git/man $manpath)
+export MANPATH
+#="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
 
 #fpath=(~/.zsh/functions $fpath)
 
 #autoload -U ~/.zsh/functions/*(:t)
 
-if [[ -n $SSH_CONNECTION ]]; then
+#if [[ -n $SSH_CONNECTION ]]; then
 #  export PS1='%m:%3~$(git_info_for_prompt)%# '
-  export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
-else
+#  export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
+#else
   #export PS1='%3~$(parse_git_branch)%# '
-  export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
-fi
+#  export PS1="\[\e[36;1m\]\h:\[\e[32;1m\]\w\[\033[1;31m\]\$(parse_git_branch)\[\033[00m\] "
+#fi
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -47,4 +73,4 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char 
+bindkey '^?' backward-delete-char

@@ -11,6 +11,18 @@ Pry.commands.alias_command 'n', 'next' rescue nil
 # This prompt shows the ruby version (useful for RVM)
 Pry.prompt = [proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level, _| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
+def y(obj)
+  puts obj.to_yaml
+end
+
+if defined? Rails
+  begin
+    require 'hirb'
+    Hirb.enable
+  rescue LoadError
+  end
+end
+
 # === Listing config ===
 # Better colors - by default the headings for methods are too
 # similar to method name colors leading to a "soup"
