@@ -39,13 +39,17 @@ source $ZSH/oh-my-zsh.sh
 
 . ~/.zsh/config
 . ~/.zsh/aliases
-. ~/.zsh/completion
+# . ~/.zsh/completion
 
-source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # use .localrc for settings specific to one system
 [[ -f ~/.localrc ]] && . ~/.localrc
 
+# Customize to your needs...
+#export PATH=$PATH:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm" # This loads RVM into a shell session.
+

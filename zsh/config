@@ -1,6 +1,7 @@
 . ~/.zsh/functions
 
-export EDITOR='mate_wait'
+export EDITOR=emacs
+#export EDITOR='mate_wait'
 
 GREP_OPTIONS=
 for PATTERN in .cvs .git .hg .svn; do
@@ -21,7 +22,15 @@ export SCALA_HOME=/usr/local/typesafe-stack
 export PLATFORM=`uname -s`
 
 typeset -U path
-path=(/usr/local/homebrew/bin /usr/local/bin /usr/local/sbin /usr/local/git/bin ${GOROOT}/bin $path ${HOME}/local/bin {SCALA_HOME}/bin)
+path=(/usr/local/homebrew/bin \
+     /usr/local/bin \
+     /usr/local/sbin \
+     /usr/local/git/bin \
+      ${GOROOT}/bin \
+      $path \
+      ${HOME}/local/node/bin \
+      ${HOME}/local/bin \
+      {SCALA_HOME}/bin)
 export path
 
 #export PATH="/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:${GOROOT}/bin:$PATH:${HOME}/local/bin:${SCALA_HOME}/bin"
@@ -74,3 +83,19 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+
+############################################################
+## Optional shell behavior
+############################################################
+
+export PAGER="less"
+#export EDITOR="emacsclient"
+alias e='emacs -nw'
+
+############################################################
+## Ruby Performance Boost (see https://gist.github.com/1688857)
+############################################################
+
+export RUBY_GC_MALLOC_LIMIT=60000000
+export RUBY_FREE_MIN=200000
+

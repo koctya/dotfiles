@@ -11,6 +11,7 @@
 	$ git submodule add https://github.com/rmm5t/color-theme-ir-black emacs.d/vendor/color-theme-ir-black
 	
 	$ git submodule add https://github.com/nex3/haml-mode emacs.d/vendor/haml-mode
+	$ git submodule add https://github.com/pezra/rspec-mode emacs.d/vendor/rspec-mode
 	
 	$ git submodule add https://github.com/michaelklishin/cucumber.el emacs.d/vendor/feature-mode.el
 	
