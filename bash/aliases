@@ -30,6 +30,7 @@ alias gca='git commit -a'
 alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
+alias gf='git flow feature'
 alias gmerge='git merge --no-ff'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
@@ -64,3 +65,5 @@ alias grep='grep --color=auto'
 alias svnkdiff3='svn diff --diff-cmd kdiff3'
 
 alias time_mpi='time mpirun --mca btl openib,self,sm --mca mpi_paffinity_alone 1'
+
+alias get='sudo apt-get install'

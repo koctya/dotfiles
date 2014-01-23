@@ -18,6 +18,9 @@ export GOOS=linux
 export GOARCH=amd64
 export GOPATH=$HOME/code/golang
 
+# set elixir environment
+export ELIXIR_ROOT=/usr/local/elixir
+
 export SCALA_HOME=/usr/local/typesafe-stack
 export PLATFORM=`uname -s`
 
@@ -27,6 +30,7 @@ path=(/usr/local/homebrew/bin \
      /usr/local/sbin \
      /usr/local/git/bin \
       ${GOROOT}/bin \
+      ${ELIXIR_ROOT}/bin \
       $path \
       ${HOME}/local/node/bin \
       ${HOME}/local/bin \

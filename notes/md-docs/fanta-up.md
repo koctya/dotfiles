@@ -1,0 +1,88 @@
+
+
+## Rare 4
+- Biance II
+- Frederike
+- Lieselotte
+- Raumur II
+- Ruya
+- Walpurgis II
+
+## 6s
+- Alexander
+- Amalia
+- Anastasia
+- Arnice
+- Brachium
+- Claudette
+- Everleaf
+- Lusoria
+- Saki
+- xReamy
+
+##5s
+- Abschied
+- Amavel IIII
+- Amor
+- Amor (M)
+- Apsara
+- Archelque
+- Argento
+- Arras
+- Bernhard II - max
+- Betania
+- Bluette
+- Brenda
+- Cerberus (M)
+- Crimine - max
+- Da Qiao - MLB
+- Destro
+- Devil (M)
+- Diane - MLB
+- Dunamis III
+- Edwin - MLB
+- Eisen
+- Eleanor
+- Elena II - max
+- Emma
+- Esna II
+- Etherium II
+- Excella II
+- Fallu III
+- Fate
+- Fiato II
+- Fiona - max
+- Firmiere II
+- Grandine
+- Hannah II
+- Joachim
+- Lev
+- Lilio
+- Locmaria II
+- Louise Garou
+- Lumiere - max
+- Maddy II
+- Marquette II
+- Marron
+- Melpha - max
+- Mentira
+- Olivia
+- Orkos
+- Patricia
+- Picoty
+- Pilz
+- Praline - max
+- Rochelle IIII - max
+- Rosseto - MLB
+- Ruse II - max
+- Sarah - max
+- Serafina
+- Sheryl
+- Sobrio II
+- Sofia
+- Theodora
+- Thrain
+- Tugba
+- Viviane
+- Xiao Qiao - max
+- Zertva - max

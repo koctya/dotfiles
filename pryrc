@@ -6,6 +6,7 @@ Pry.config.prompt = Pry::NAV_PROMPT
 Pry.commands.alias_command 'c', 'continue' rescue nil
 Pry.commands.alias_command 's', 'step' rescue nil
 Pry.commands.alias_command 'n', 'next' rescue nil
+Pry.commands.alias_command 'w', 'whereami' rescue nil
 
 # === CUSTOM PROMPT ===
 # This prompt shows the ruby version (useful for RVM)
