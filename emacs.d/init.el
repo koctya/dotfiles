@@ -9,6 +9,26 @@
 ;; brighter; it simply makes everything else vanish."
 ;; -Neal Stephenson, "In the Beginning was the Command Line"
 
+;; Prevent the cursor from blinking
+(blink-cursor-mode 0)
+;; Don't use messages that you don't read
+(setq initial-scratch-message "")
+(setq inhibit-startup-message t)
+;; Don't let Emacs hurt your ears
+(setq visible-bell t)
+
+;; This is bound to f11 in Emacs
+(toggle-frame-fullscreen)
+;; Who use the bar to scroll?
+(scroll-bar-mode 0)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+
+;; You can also set the initial frame parameters
+;; (setq initial-frame-alist
+;;       '((menu-bar-lines . 0)
+;;         (tool-bar-lines . 0)))
+
 ;; Turn off mouse interface early in startup to avoid momentary display
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))

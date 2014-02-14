@@ -2,50 +2,108 @@
 
 ## Rare 4
 - Biance II
+- Caym MLB
+- Debbie MLB
 - Frederike
+- Ghost (M)
+- Hraesvelgr
 - Lieselotte
 - Raumur II
 - Ruya
 - Walpurgis II
+- Witch max
+- Viola
+- Xiahou Dun
+- Drea
+- Furfur MLB
+- Mary
+
+## Rare 3
+- Lu Xun
+- Sima Yi II
+- Hikaru II
+- Bakeneko
+- Elly
+- Erlik
 
 ## 6s
 - Alexander
+- Alt MLB
 - Amalia
-- Anastasia
+- Anastasia MLB
 - Arnice
+- Bastiat MLB
+- Belfort MLB
 - Brachium
+- Celestina MLB
+- Chevalier MLB
 - Claudette
+- Debbie (Xmas) MLB
+- Dizzy MLB
+- Dullahan (M)
+- Everleaf MLB
 - Everleaf
+- Gluck MLB
+- Grace
+- Isis MLB
+- Krene MLB
+- Lavina
 - Lusoria
-- Saki
-- xReamy
+- Medusa (M)
+- Paris
+- Phileas MLB
+- Saki MLB
+- Selina
+- Soleil MLB
+- Sommeil MLB
+- Vlad
+- xReamy II
+- Viera
+- Lu Bu
+- Abel
+- Beatrix
+- Chiara
+- Irene
+- Zhao Yun MLB II
+- Mina
+- Phoebe
 
 ##5s
 - Abschied
-- Amavel IIII
+- Adolf
+- Agnes
+- Amavel IIIII
+- Amina
 - Amor
 - Amor (M)
 - Apsara
 - Archelque
-- Argento
+- Argento III
 - Arras
+- Aspara
+- Bernard
 - Bernhard II - max
 - Betania
 - Bluette
 - Brenda
-- Cerberus (M)
+- Camille
+- Cerberus (M) II
 - Crimine - max
-- Da Qiao - MLB
+- Curious
+- Da Qiao - max
 - Destro
-- Devil (M)
+- Devil (M) II
 - Diane - MLB
 - Dunamis III
 - Edwin - MLB
 - Eisen
 - Eleanor
 - Elena II - max
+- Eliana
 - Emma
-- Esna II
+- Epis
+- Ernesto MLB
+- Esna III
 - Etherium II
 - Excella II
 - Fallu III
@@ -53,21 +111,33 @@
 - Fiato II
 - Fiona - max
 - Firmiere II
+- Gerhard
 - Grandine
+- Gryphon II
 - Hannah II
+- Heidemarie
+- Hildegard
 - Joachim
+- Klavier max
 - Lev
-- Lilio
-- Locmaria II
+- Lilio I
+- Locmaria II MLB
 - Louise Garou
+- Lucrezia
 - Lumiere - max
 - Maddy II
+- Magnificus
+- Manticore (M)
 - Marquette II
 - Marron
 - Melpha - max
 - Mentira
+- Nue (M)
+- Nurikabe
 - Olivia
 - Orkos
+- Orte MLB
+- Pale (M)
 - Patricia
 - Picoty
 - Pilz
@@ -75,14 +145,62 @@
 - Rochelle IIII - max
 - Rosseto - MLB
 - Ruse II - max
-- Sarah - max
+- Sarah - II max
+- Seiver
 - Serafina
+- Serieux
 - Sheryl
-- Sobrio II
+- Sleipnir max
+- Sobrio III
 - Sofia
+- Sogno
 - Theodora
 - Thrain
-- Tugba
+- Trane (M)
+- Tugba II
+- Valeria max
+- Veloz
+- Vice
 - Viviane
+- Volja
+- Wendy II
+- White Tiger (M)
 - Xiao Qiao - max
+- Zakuro III
 - Zertva - max
+- Zhou Yu - MLB
+- Phoebe
+- Celia
+- Tiara
+- Elly
+
+
+##4*
+- Amartia (M)
+- Armin
+- Bambina
+- Berthold
+- Birgit II
+- Chagrin max
+- Christof
+- Darla
+- Deleasmos (M)
+- Dinami max
+- Entia
+- Fawn
+- Fleche
+- Gaap - MLB
+- Heilo max
+- Inugami
+- Karen
+- Mimi III
+- Minotaur max
+- Nanael - max III
+- Orune
+- Poisonous Flower max III
+- Rethel
+- Ruaks max
+- Silky
+- Verde
+- Vulpes II
+- Zashiki Warashi IIII
