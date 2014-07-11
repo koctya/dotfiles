@@ -27,57 +27,65 @@
 - Erlik
 
 ## 6s
-- Alexander
+- Abel MLB
 - Alt MLB
 - Amalia
 - Anastasia MLB
 - Arnice
 - Bastiat MLB
+- Beatrix MLB
+- Bela
 - Belfort MLB
 - Brachium
 - Celestina MLB
 - Chevalier MLB
+- Chiara
 - Claudette
 - Debbie (Xmas) MLB
 - Dizzy MLB
-- Dullahan (M)
+- Dullahan (M) MLB
 - Everleaf MLB
-- Everleaf
+- Fuir
 - Gluck MLB
 - Grace
+- Irene MLB
 - Isis MLB
 - Krene MLB
-- Lavina
+- Lament MLB
+- Lavina MLB
+- Lu Bu MLB
 - Lusoria
-- Medusa (M)
+- Medusa (M) MLB
+- Mina
 - Paris
 - Phileas MLB
+- Phoebe MLB
 - Saki MLB
 - Selina
 - Soleil MLB
 - Sommeil MLB
-- Vlad
-- xReamy II
-- Viera
-- Lu Bu
-- Abel
-- Beatrix
-- Chiara
-- Irene
-- Zhao Yun MLB II
-- Mina
-- Phoebe
+- Viera MLB
+- Vlad MLB
+- xReamy
+- Zhao Yun
+- xReamy MLB
+- Zhao Yun MLB
+
 
 ##5s
 - Abschied
 - Adolf
 - Agnes
 - Amavel IIIII
+- Ameile
+- Amina
 - Amina
 - Amor
 - Amor (M)
+- Anelo
 - Apsara
 - Archelque
+- Argent
 - Argento III
 - Arras
 - Aspara
@@ -85,42 +93,67 @@
 - Bernhard II - max
 - Betania
 - Bluette
+- Brave
 - Brenda
+- Brucke
+- Bruja
+- Bruja
 - Camille
+- Cardiff
+- Celia
 - Cerberus (M) II
+- Charlotte
+- Ciel
+- Corda
 - Crimine - max
 - Curious
 - Da Qiao - max
 - Destro
 - Devil (M) II
 - Diane - MLB
+- Dianoia
 - Dunamis III
 - Edwin - MLB
+- Eins (M)
 - Eisen
 - Eleanor
 - Elena II - max
 - Eliana
+- Elly
 - Emma
 - Epis
+- Epreuve
+- Erasure
 - Ernesto MLB
 - Esna III
 - Etherium II
 - Excella II
 - Fallu III
 - Fate
+- Felicta
 - Fiato II
 - Fiona - max
 - Firmiere II
+- Frau
 - Gerhard
+- Gracia
 - Grandine
+- Grete
+- Grito
 - Gryphon II
-- Hannah II
+- Hannah III
 - Heidemarie
 - Hildegard
-- Joachim
+- Irmela
+- Joachim II
+- Julia
 - Klavier max
+- Kordella
+- Kravz
+- Laurie
 - Lev
 - Lilio I
+- Limerick
 - Locmaria II MLB
 - Louise Garou
 - Lucrezia
@@ -132,6 +165,7 @@
 - Marron
 - Melpha - max
 - Mentira
+- Milet - Tr
 - Nue (M)
 - Nurikabe
 - Olivia
@@ -139,25 +173,38 @@
 - Orte MLB
 - Pale (M)
 - Patricia
+- Perencer II
+- Phoebe
 - Picoty
 - Pilz
+- Poker (M)
 - Praline - max
+- Prawno
+- Rin
+- Rin
 - Rochelle IIII - max
 - Rosseto - MLB
 - Ruse II - max
+- Sanja
+- Sarah
 - Sarah - II max
+- Schlacht
 - Seiver
 - Serafina
-- Serieux
+- Serieux - Tr
 - Sheryl
 - Sleipnir max
 - Sobrio III
 - Sofia
 - Sogno
+- Stilli
 - Theodora
 - Thrain
+- Tiara
 - Trane (M)
 - Tugba II
+- Undine
+- Valckx
 - Valeria max
 - Veloz
 - Vice
@@ -169,10 +216,7 @@
 - Zakuro III
 - Zertva - max
 - Zhou Yu - MLB
-- Phoebe
-- Celia
-- Tiara
-- Elly
+- Zwei
 
 
 ##4*

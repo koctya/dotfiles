@@ -4,6 +4,7 @@ source 'http://gems.github.com'
 
 gem 'ember-rails', git: 'git://github.com/emberjs/ember-rails.git' # so we get the pre version
 gem 'rack-mini-profiler', git: 'git://github.com/SamSaffron/MiniProfiler'
+gem 'ruby-requirejs'
 
 gem 'haml-rails', '~> 0.4'
 
