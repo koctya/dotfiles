@@ -1,0 +1,24 @@
+{
+	// copy or link to ~/.config/sublime-text-2/Packages/User/
+
+	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
+	"ignored_packages":
+	[
+		"Vintage",
+		"GitGutter"
+	],
+	"rulers":
+	[
+		80
+	],
+	"save_on_focus_lost": true,
+	"tab_size": 2,
+  // Disables horizontal scrolling if enabled.
+  // May be set to true, false, or "auto", where it will be disabled for
+  // source code, and otherwise enabled.
+  "word_wrap": "true",
+
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}
