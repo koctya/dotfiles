@@ -1,6 +1,15 @@
 # Rails notes
 
-Setting up a new rails project.
+Rails Internals Class
+
+To complete the subscription process, please click the link in the email we just sent you.
+
+For your free chapters of Rebuilding Rails, check out:
+
+http://rebuilding-rails.com/RebuildingRailsFree.pdf
+http://rebuilding-rails.com/RebuildingRailsFree.epub
+
+# Setting up a new rails project.
 
     $ rails new samp-app -T
 

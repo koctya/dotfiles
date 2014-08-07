@@ -62,3 +62,22 @@ At this point git status will tell you that your working directory is clean and 
 
 Butter.
 
+
+# caring about the project history
+
+Submitted by ao2 (not verified) on Mon, 10/03/2011 - 03:53
+git bisect is great. And it is another reason for caring about the project history (I mean the commit history in this context):
+
+    don't put logically unrelated changes in the same commit;
+    don't mix functional changes with cosmetic changes;
+    attribute changes to the original authors, so you know whom to ask about the change causing the problem; and they also take the blame :)
+
+Those simple rules are generic but they have the side effect of making bisecting ever more effective.
+
+# Submodules
+
+http://www.git-scm.com/book/en/Git-Tools-Submodules
+
+http://longair.net/blog/2010/06/02/git-submodules-explained/
+
+https://git.wiki.kernel.org/index.php/GitSubmoduleTutorial
