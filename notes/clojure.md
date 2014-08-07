@@ -1,5 +1,8 @@
 # Clojure
 
+
+http://blog.danieljanus.pl/blog/2014/05/20/you-already-use-lisp-syntax/
+
 http://blog.txus.io/2014/05/why-i-am-excited-about-clojure/
 
 http://murilopereira.com/the-case-for-reactjs-and-clojurescript

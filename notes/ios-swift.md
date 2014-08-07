@@ -17,3 +17,5 @@ http://www.macobserver.com/tmo/article/9-swift-resources-for-iOS-8-developers
 
 http://ios-blog.co.uk/swift-tutorials/ios-8-swift-hello-world-and-introduction/
 
+
+http://brandontreb.com/learned-first-year-ios-consulting

@@ -13,3 +13,6 @@ https://github.com/dynamo/dynamo
 
 http://elixir-lang.org/
 
+# Erlang
+
+http://learnyousomeerlang.com/what-is-otp

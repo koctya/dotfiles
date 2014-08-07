@@ -7,13 +7,7 @@ https://www.stellar.org/blog/introducing-stellar/
 
 http://www.kalzumeus.com/2014/08/05/harry-potter-and-the-cryptocurrency-of-stars/
 
-http://www.macobserver.com/tmo/article/the-most-enduring-and-endearing-features-of-os-x-throughout-the-years2
-
-http://www.macobserver.com/tmo/article/the-most-enduring-and-endearing-features-of-os-x-throughout-the-years.-part
-
 http://www.idownloadblog.com/2014/08/05/op-ed-verizon-is-stupid/
-
-http://arstechnica.com/information-technology/2014/08/how-microsoft-dragged-its-development-practices-into-the-21st-century/
 
 http://www.cnn.com/2014/08/05/politics/u-s-new-leaker/index.html?hpt=hp_inthenews
 
@@ -49,7 +43,6 @@ http://appleinsider.com/articles/14/08/04/editorial-why-apple-inc-isnt-worried-a
 
 https://www.hushmail.com/
 
-http://appleinsider.com/articles/14/08/02/al-qaeda-prefers-android-over-apples-ios
 
 http://wozniak.ca/what-orms-have-taught-me-just-learn-sql
 
@@ -99,11 +92,10 @@ http://www.businessinsider.com/simple-banking-2014-1
 
 http://nsainsbury.svbtle.com/java-developers
 
-http://computers.tutsplus.com/tutorials/running-android-on-a-mac--cms-21526
 
 https://spideroak.com/
 
-http://www.tuaw.com/2014/07/24/microsoft-still-doesnt-get-why-the-iphone-succeeded/
+
 
 http://www.computerdealernews.com/news/byod-and-the-time-steve-jobs-compared-cios-to-an-orifice/32856
 
@@ -117,7 +109,7 @@ http://computers.tutsplus.com/tutorials/how-to-remotely-wake-a-mac-with-an-iOS-d
 
 https://joinup.ec.europa.eu/community/osor/news/valencia-linux-school-distro-saves-36-million-euro
 
-http://www.itnews.com.au/News/390365,popular-android-apps-inherit-bugs-from-recycled-code.aspx
+
 
 http://www.macworld.com/article/2457719/how-to-automatically-add-movies-to-your-mac-media-server.html#tk.rss_all
 
@@ -133,25 +125,15 @@ http://www.cultofmac.com/277592/recruitment-app-like-tinder-jobseekers/
 
 http://open-zfs.org/wiki/Announcement
 
-http://www.businessinsider.com/iphone-compared-to-samsung-galaxy-s5-2014-7?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+typepad%2Falleyinsider%2Fsilicon_alley_insider+%28Silicon+Alley+Insider%29
-The Galaxy S5 has flaws, too.
-
-I noticed immediately that my new Galaxy didn't come in the latest version of Android, and that just felt weird.
-There is only one way to set up a new Android phone. And that's to find someone else who already has an Android and get them to talk you through it. It's complicated because it's giving you tons of choices, which is great, but still. The settings section alone is homework.The Google integration is extremely intrusive. Basically, you can't use the phone without signing in with your Gmail identity. I preferred the way iPhone let me keep my "identities" separate. On Android, Google now knows everything I do with my phone whether I like it or not.
-
-http://hothardware.com/News/Senator-Slams-Microsofts-Visa-Hypocrisy-As-MSFT-Searches-For-Foreign-Workers-While-Laying-Off-Others/#!bi9013
-
 http://arstechnica.com/tech-policy/2014/07/ars-editor-learns-feds-have-his-old-ip-addresses-full-credit-card-numbers/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+arstechnica%2Findex+%28Ars+Technica+-+All+content%29
 
 http://arstechnica.com/security/2014/03/surprise-surprise-my-online-metadata-actually-reveals-where-ive-been/
 
 http://www.reuters.com/article/2014/07/19/us-usa-snowden-hackers-idUSKBN0FO0ZB20140719
 
-http://appleinsider.com/articles/14/07/20/editorial-google-microsoft-claiming-apples-crown-albeit-from-1994
+
 
 http://bohemianboomer.com/2014/07/free-yet-another-easy-way-to-backup-critical-files-on-your-mac/
-
-http://www.thestreet.com/story/12779234/1/apple-will-murder-microsoft-and-bury-it-with-blackberrys-corpse.html?puc=yahoo&cm_ven=YAHOO
 
 http://benchmarksgame.alioth.debian.org/
 
@@ -191,7 +173,6 @@ http://preshing.com/20140127/what-is-a-bitcoin-really/
 
 http://mszep.github.io/pandoc_resume/
 
-http://teratalks.com/2013/03/the-many-faces-of-android-actually-theres-just-two-types-of-users/
 
 http://www.newyorker.com/reporting/2014/07/21/140721fa_fact_aviv?currentPage=8
 
@@ -204,7 +185,7 @@ http://stratechery.com/2014/smartphone-truths-samsungs-inevitable-decline/
 
 http://mac360.com/2014/07/apples-growing-problem-with-intel/
 
-http://computers.tutsplus.com/tutorials/how-to-verify-and-repair-a-disk-from-the-os-x-command-line--cms-21561
+
 
 http://hints.macworld.com/article.php?story=20140709150132330
 
@@ -294,21 +275,18 @@ http://www.infoworld.com/slideshow/157168/minding-the-gap-7-tips-old-programmers
 
 http://joearms.github.io/2014/06/26/Background-to-programming-erlang.html
 
-http://blogs.computerworld.com/mac-os-x/23923/os-x-mavericks-using-apples-hidden-wi-fi-diagnostics-tool
 
-http://blog.danieljanus.pl/blog/2014/05/20/you-already-use-lisp-syntax/
+
 
 http://www.theguardian.com/commentisfree/2014/may/20/why-did-lavabit-shut-down-snowden-email
-Erlang and code style
-https://medium.com/p/b5936dceb5e4
+
+[Erlang and code style](https://medium.com/p/b5936dceb5e4)
 
 http://blog.hackingthought.com/2014/05/my-opinionated-guide-to-go-golang.html
 
 http://www.wired.com/2014/05/snowden-cryptoparty
 
-http://computers.tutsplus.com/tutorials/introducing-markdown-on-os-x--cms-20764
 
-http://www.mitchchn.me/2014/os-x-terminal/
 
 https://github.com/buunguyen/octotree
 
@@ -318,7 +296,7 @@ https://www.webkit.org/blog/3362/introducing-the-webkit-ftl-jit/
 
 http://bgr.com/2014/05/07/senator-franken-net-neutrality-campaign/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+TheBoyGeniusReport+%28BGR+|+Boy+Genius+Report%29
 
-http://www.zdnet.com/uk/must-have-ios-android-productivity-apps-7000029108/
+
 
 http://mac360.com/2014/05/youve-never-see-files-and-folders-synchronized-quite-like-this-rare-mac-app/
 
@@ -329,7 +307,7 @@ http://www.youtube.com/watch?v=qqVbr_LaCIo
 
 http://venturebeat.com/2014/05/15/how-the-nsa-fbi-made-facebook-the-perfect-mass-surveillance-tool/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+Venturebeat+%28VentureBeat%29
 
-http://www.mitchchn.me/2014/os-x-terminal/
+
 
 http://blog.hackingthought.com/2014/05/my-opinionated-guide-to-go-golang.html
 
@@ -342,10 +320,6 @@ http://www.panic.com/
 http://nixos.org/nix/
 
 https://atom.io/
-
-http://www.thestreet.com/story/12700488/1/nobody-can-save-microsoft-its-about-to-die.html?
-
-http://www.thestreet.com/story/12541622/1/with-or-without-apple-google-will-crush-microsoft.html
 
 http://www.davidhampgonsalves.com/Markdown-resume/
 
@@ -375,7 +349,6 @@ http://mattgreer.org/articles/promises-in-wicked-detail/
 
 http://www.enterprisetech.com/2014/05/06/arm-servers-now/
 
-http://www.applegazette.com/news/hackers-focusing-android-give-iphone/
 
 https://codio.com/
 
@@ -419,7 +392,7 @@ http://www.forbes.com/sites/jamesconca/2014/04/20/its-final-corn-ethanol-is-of-n
 
 http://politics.slashdot.org/story/14/04/17/1659236/snowden-queries-putin-on-live-tv-regarding-russian-internet-surveillance
 
-http://blogs.computerworld.com/mac-os-x/23810/how-avoid-paying-apple-extra-icloud-storage
+
 
 http://www.cultofmac.com/275313/apple-puts-shine-environment-new-ad-campaign-video/
 
@@ -427,7 +400,7 @@ https://www.gitlab.com/
 
 https://plus.google.com/+RyanGordon/posts/4N6vPqaGjrV
 
-http://www.thestreet.com/story/12676818/2/load-up-on-apple-stock-as-android-killer-looms.html
+
 
 http://www.zdnet.com/now-is-the-time-to-switch-back-to-firefox-7000028641/?#ftag=RSS14dc6a9
 
@@ -447,9 +420,7 @@ https://github.com/vvo/selenium-standalone
 
 http://bits.blogs.nytimes.com/2014/04/13/bend-it-charge-it-dunk-it-graphene-the-material-of-tomorrow/?_php=true&_type=blogs&_php=true&_type=blogs&ref=technology&_r=1&
 
-http://appleinsider.com/articles/14/04/14/exclusive-android-docs-reveal-before-iphone-googles-plan-was-a-java-button-phone
 
-http://appleinsider.com/articles/14/04/10/how-samsung-google-teamed-up-to-steal-apple-data-detectors-for-android
 
 http://www.huffingtonpost.com/2014/04/14/keyboard-shortcuts-mac_n_4981493.html?
 
@@ -471,7 +442,7 @@ https://gpgtools.org/
 
 http://www.leancrew.com/all-this/2014/04/unix-text-tools-to-the-rescue/
 
-http://www.imore.com/heartbleed-new-openssl-hack-how-does-it-affect-os-x-and-ios
+
 
 http://www.macworld.co.uk/news/newswire/mediafire-offers-1tb-of-cloud-storage-for-250-10gb-for-free-3511199/
 
@@ -479,7 +450,6 @@ http://tech.pro/tutorial/1190/package-managers-an-introductory-guide-for-the-uni
 
 http://appleinsider.com/articles/14/04/01/visionaries-of-the-tech-world-who-foresaw-apples-future
 
-http://www.macworld.com/article/2138687/latest-iwork-update-is-another-win-for-applescript.html#tk.rss_all
 
 http://applesliced.com/app?n=rio-official-app-for-movie&cl=3600000
 
@@ -503,12 +473,10 @@ http://venturebeat.com/2014/04/01/the-mobile-web-is-still-losing-out-to-native-a
 
 http://time.com/45018/the-secret-ios-feature-that-could-change-the-internet/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+timeblogs%2Fnerd_world+%28TIME%3A+Techland%29
 
-http://venturebeat.com/2013/10/22/heres-how-apple-assaulted-microsoft-today-in-three-crushing-quotes/
-
 http://time.com/43263/gmail-10th-anniversary/
 One of the lessons I learned from that was just in terms of my own psychology, that it was important that I always have a working product. The first thing I do on day one is build something useful, then just keep improving it.”
 
-http://www.macworld.com/article/2105200/bad-applescript-safari-and-curling-urls.html
+
 
 http://www.fourhourworkweek.com/blog/2014/03/12/how-to-learn-a-foreign-language/
 
@@ -522,15 +490,13 @@ http://applesliced.com/app?n=pdf-reader-ipad-edition&cl=3600000
 
 http://pixobebo.com/2014/03/forget-about-apple-disrupting-the-tv-industry-the-tv-industry-is-disrupting-itself/
 
-http://www.stuff.co.nz/technology/digital-living/30024087/ipad-generation-shuns-microsoft-office
-
-Developer Happiness
+>Developer Happiness
 It’s extremely difficult to hire top talent these days; good developers like to learn new things and to use new technologies. The ability to make developers happy in your organisation cannot be underestimated, happy enthusiastic developers means better software, delivered with more passion by people that are having fun.
 Bill Scott, once told the story of a new hire that had the choice of going to work for Facebook or PayPal. Faced with similar offers and benefits the developer made his choice, and was quoted as saying.
 “Why go to Facebook and do PHP when you can go to PayPal and do Node.js”
 - Bill Scott – Dir UX PayPal
 
-http://appleinsider.com/articles/14/03/14/how-android-lost-global-open-market-share-to-apples-integrated-ios
+
 
 
 https://blogs.oracle.com/fatbloke/entry/networking_in_virtualbox1
@@ -543,7 +509,7 @@ http://blog.urx.com/post/79290681131/differential-equations-in-data-science?utm_
 
 http://preshing.com/20120612/an-introduction-to-lock-free-programming/
 
-http://computers.tutsplus.com/tutorials/change-your-dns-for-safer-faster-browsing--mac-61232
+
 
 http://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/
 
@@ -557,30 +523,38 @@ http://pragdave.me/blog/2014/03/04/time-to-kill-agile/
 
 http://opensource.com/business/14/3/postgresql-ugly-no-more
 
-It reminds me of when my son suggested I try Ubuntu Linux. I had to buy a Windows laptop when I was working on the Windows port for PostgreSQL. I downloaded Ubuntu and started using it. I had been working with it for about a month when I had to go back into Windows for a project. I was shocked at how many things I suddenly could not do, things I had begun to take for granted.
+>It reminds me of when my son suggested I try Ubuntu Linux. I had to buy a Windows laptop when I was working on the Windows port for PostgreSQL. I downloaded Ubuntu and started using it. I had been working with it for about a month when I had to go back into Windows for a project. I was shocked at how many things I suddenly could not do, things I had begun to take for granted.
 
 http://2013.jsconf.eu/speakers/pete-hunt-react-rethinking-best-practices.html
 
 http://blog.codacy.com/top-10-faster-code-reviews/
 
 http://docs.lighttable.com/tutorials/full/
-http://www.macobserver.com/tmo/article/why-we-love-apple-microsoft-just-makes-us-sigh
-http://kensegall.com/2014/03/microsoft-vs-apple-the-strategy-gap/
-http://appleinsider.com/articles/14/03/07/new-android-rat-infects-google-play-apps-turning-phones-into-spyware-zombies
+
 http://www.forbes.com/sites/stevedenning/2014/03/07/why-tim-cook-doesnt-care-about-the-bloody-roi/
- http://presentationmagic.com/2014/03/10/sciencepresentersmistakes/
+
+http://presentationmagic.com/2014/03/10/sciencepresentersmistakes/
+
 http://blog.httrack.com/blog/2014/03/09/what-are-your-gcc-flags/
+
 https://news.ycombinator.com/item?id=7372997
+
 http://www.cultofmac.com/263432/teach-siri-pronounce-tricky-names-ios-tips/
+
 http://www.evanmiller.org/why-im-betting-on-julia.html
+
 http://julialang.org/downloads/
+
 https://itunes.apple.com/us/book/jony-ive/id630828116?mt=11&ign-mpt=uo%3D4
-http://www.cultofmac.com/254380/jony-ives-cars/
+
+
 http://t37.net/why-buffer-is-the-new-37signals-and-what-it-means-for-the-startup-culture.html
+
 http://blog.bufferapp.com/
+
 https://news.ycombinator.com/news
 
-http://www.bresink.com/osx/TinkerTool.html
+
 
 http://www.dailydot.com/lifestyle/subwoofer-bass-sound-system-orgasm-video/
 
@@ -591,6 +565,7 @@ https://github.com/landonf/Testability-CVE-2014-1266
 http://appleinsider.com/articles/14/02/24/imagination-unveils-192-core-mobile-gpu-potentially-bound-for-future-apple-iphones-ipads
 
 http://rixstep.com/4/0/tracker/
+
 http://rixstep.com/2/20130109,00.shtml
 
 https://news.ycombinator.com/item?id=7290749
@@ -625,13 +600,12 @@ http://rixstep.com/4/0/td.shtml
 
 http://rixstep.com/4/0/tracker/
 
-http://bgr.com/2014/02/20/yandex-forked-android-experience/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+TheBoyGeniusReport+%28BGR+|+Boy+Genius+Report%29
 
 http://siliconangle.com/blog/2014/02/17/could-apples-next-big-product-be-the-icar/
 
 http://ozmm.org/posts/singin_singletons.html
 
-http://pixobebo.com/2014/02/what-apple-knows-that-samsung-microsoft-and-google-do-not-know/
+
 
 http://mac360.com/2014/02/paranoid-much-need-more-security-add-the-tor-browser-bundle-to-your-mac/
 
@@ -643,9 +617,9 @@ http://www.computerworld.com/s/article/9246409/Jonny_Evans_Has_Samsung_stalled_
 
 http://www.cultofmac.com/267073/biographics/
 
-http://teratalks.com/2014/02/why-iphone-users-dont-switch-to-android-or-windows-phone/
 
-http://www.t-gaap.com/2014/2/19/apple-readying-a8-macbook-air
+
+
 
 https://discussions.apple.com/docs/DOC-3521
 
@@ -661,7 +635,7 @@ http://mac360.com/2014/02/a-look-at-apples-house-of-cards/
 
 http://www.staples.com/office/supplies/StaplesProductDisplay?PID=3586864&CID=AFF%253A3586864%253A3586864%253A10422268&catalogIdentifier=2&langid=-1&cm_mmc=CJ-_-affiliate-_-feed-_-listing&cm_mmc=CJ-_-affiliate-_-feed-_-listing&AID=10422268&partNumber=306704&storeId=10001
 
-http://bohemianboomer.com/2014/02/this-app-is-the-clean-colorful-and-free-way-to-clean-up-your-mac/
+
 
 http://teratalks.com/2014/02/notes-just-became-ultra-simple-free-and-more-secure/
 
@@ -671,17 +645,12 @@ http://agilescout.com/
 
 https://github.com/soveran/gs
 
-http://arstechnica.com/information-technology/2014/02/neither-microsoft-nokia-nor-anyone-else-should-fork-android-its-unforkable/
 
-http://www.itproportal.com/reviews/hardware/apple-mac-pro-review/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+itproportal%2Frss+%28Latest+ITProPortal+News%29
 
-http://www.macworld.co.uk/news/mac/10-reasons-why-macs-are-better-pcs-3471928/
 
 http://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/
 
 http://www.forbes.com/sites/onmarketing/2011/12/14/the-real-story-behind-apples-think-different-campaign/
-
-http://daringfireball.net/2014/02/microsoft_past_and_future
 
 http://docs.mongodb.org/manual/tutorial/install-mongodb-on-ubuntu/
 
@@ -689,13 +658,10 @@ http://expm.co/
 
 http://backbonetutorials.com/
 
-http://www.paulgraham.com/microsoft.html
-
 http://www.nextadvisor.com/blog/2013/12/23/pay-no-interest-post-holiday-credit-card-balance/?kw=disq_holbal229
 
 http://www.newsmaxhealth.com/MKTNews/gmo-dangerous-organic-food/2013/12/04/id/540010/?PROMO_CODE=15FF8-4
 
-http://www.macworld.co.uk/news/iosapps/ios-vs-android-which-is-more-secure-3499540/
 
 https://leanpub.com/marionette-gentle-introduction
 
@@ -707,31 +673,23 @@ http://chadfowler.com/blog/2014/01/26/the-magic-of-strace/
 
 http://www.evanmiller.org/why-im-betting-on-julia.html
 
-http://bgr.com/2014/01/23/android-review-iphone-user/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+TheBoyGeniusReport+%28BGR+|+Boy+Genius+Report%29
-
 http://betanews.com/2014/01/23/get-1tb-of-free-cloud-storage-with-yunio/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed+-+bn+-+Betanews+Full+Content+Feed+-+BN
 
 http://www.ratgpu.com/
 
 http://mac360.com/2014/01/how-samsung-suffers-in-apples-shadow/
 
-http://www.theguardian.com/technology/blog/2014/jan/28/mac-pro-seymour-cray-would-have-approved
 
-http://mac360.com/2012/06/the-easy-way-to-turn-your-skype-calls-into-quicktime-movies-on-a-mac/
 
 http://www.applegazette.com/itunes/remove-itunes-duplicates-like-pro/
 
 http://www.mcelhearn.com/how-to-combine-or-merge-two-itunes-libraries/
 
-
-
 http://www.applegazette.com/itunes/how-to-make-free-ringtones-with-garageband/
 
-http://mac360.com/2014/01/free-how-to-keep-nefarious-apps-on-your-mac-from-phoning-home/
 
-http://mac360.com/2012/04/10-easy-point-and-click-ways-to-secure-your-mac-with-a-single-app/
 
-http://www.technightowl.com/newsletter/2014/01/newsletter-issue-736/#macs
+
 
 http://www.anandtech.com/show/5867/bitfenix-prodigy-review-the-affordable-performable-miniitx
 
@@ -763,8 +721,6 @@ http://engineering.linkedin.com/frontend/client-side-templating-throwdown-mustac
 
 http://9to5mac.com/2014/01/12/apple-touts-ipads-abilities-in-new-poetry-themed-ad-what-will-your-verse-be-website/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+9To5Mac-MacAllDay+%289+to+5+Mac+-+Apple+Intelligence%29
 
-http://www.thestreet.com/story/12230043/1/apple-will-put-microsoft-hp-out-of-business.html?puc=yahoo&cm_ven=YAHOO
-
 http://www.imore.com/booth-babes-ces-2014
 
 http://www.tuaw.com/2014/01/10/romo-the-cute-robot-with-an-iphone-for-a-brain/
@@ -775,9 +731,9 @@ https://gocasts.io/
 
 http://www.imore.com/how-anti-apple-pro-amazon-manipulations-may-have-resulted-less-competition-and-higher-prices
 
-http://mac360.com/2014/01/how-google-tries-and-fails-to-be-as-cool-diverse-and-popular-as-apple/
 
-http://appledailyreport.com/philips-28-inch-4k-ultra-hd-monitor-gives-me-hope-for-a-retina-display-imac/
+
+
 
 http://www.wired.com/opinion/2014/01/google-didnt-just-acquire-nest-annexed-whole-new-territory/?cid=co17085894
 
@@ -789,23 +745,12 @@ http://9gag.com/gag/13848
 
 http://www.buzzfeed.com/lukelewis/28-things-only-developers-will-find-funny
 
-http://mac360.com/2012/11/what-apple-is-doing-right-with-the-ipad-is-what-microsoft-does-wrong-with-surface/
-
-http://learnyousomeerlang.com/what-is-otp
 
 http://omz-software.com/pythonista/
 
 http://arstechnica.com/information-technology/2014/01/hands-on-with-hps-z1-g2-the-ultimate-all-in-one/
 
 https://itunes.apple.com/us/app/presentics-minimalist-multimedia/id746422887?mt=8&ign-mpt=uo%3D4
-
-http://appledailyreport.com/philips-28-inch-4k-ultra-hd-monitor-gives-me-hope-for-a-retina-display-imac/
-
-http://tech.fortune.cnn.com/2014/01/06/apple-google-amazon-merckel/?section=magazines_fortune&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+rss%2Fmagazines_fortune+%28Fortune+Magazine%29
-
-http://mac360.com/2014/01/lying-and-fud-its-how-to-compete-against-the-mac-iphone-and-ipad/
-
-http://brandontreb.com/learned-first-year-ios-consulting
 
 http://blog.codecombat.com/we-have-open-sourced-everything
 
@@ -837,27 +782,13 @@ http://mashable.com/2013/11/26/apple-27-inch-imac-review/?utm_campaign=Feed%3A+M
 
 http://www.digitaltrends.com/computing/windows-based-high-end-mac-pro-equivilent-costs-even-9599/
 
-http://www.businessinsider.com/android-update-process-2013-12?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+typepad%2Falleyinsider%2Fsilicon_alley_insider+%28Silicon+Alley+Insider%29
-
 http://computers.tutsplus.com/tutorials/40-more-essential-keyboard-shortcuts-to-improve-your-workflow--mac-58680
-
-http://www.itproportal.com/2013/07/19/a-guide-to-using-os-xs-automator-to-create-your-own-software/
-
-http://www.itproportal.com/2013/10/25/10-of-the-most-impressive-new-features-in-apples-os-x-mavericks/
-
-http://www.itproportal.com/2012/10/02/os-x-mountain-lion-hidden-mysteries-of-the-option-key/
 
 http://gilesbowkett.blogspot.com/2009/04/miniapp-hacker-newspaper.html
 
-http://reviews.cnet.com/apple-os-x-10.9-mavericks/?part=rss&subj=latestreviews&tag=title&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+cnet%2FYIff+%28CNET+Latest+Reviews%29
+[Understanding Computation](http://shop.oreilly.com/product/0636920025481.do)
 
-http://teratalks.com/2013/12/free-how-to-put-color-back-into-os-xs-boring-finder-sidebar/
-
-http://www.cultofmac.com/254695/for-samsung-stealing-cheating-and-lying-are-business-as-usual/
-
-http://shop.oreilly.com/product/0636920025481.do
-
-http://www.youtube.com/watch?v=4pObcegbMRE
+[Ruby Conf 2013 Living in the Fantasy Land by Yukihiro "Matz" Matsumoto](http://www.youtube.com/watch?v=4pObcegbMRE)
 
 http://www.macworld.co.uk/digitallifestyle/news/?newsid=3489857&olo=rss
 
@@ -867,13 +798,93 @@ http://www.macworld.com/article/2043039/review-airmail-email-client-has-sleek-fu
 
 http://bohemianboomer.com/2012/05/the-geekiest-most-powerful-mac-utility-tool-is-also-free-but-not-easy/
 
-
 http://www.bankrate.com/finance/retirement/6-cheap-places-retire-abroad.aspx?ec_id=m1175264#slide=3
-
-
 
 http://www.ilounge.com/index.php/reviews/entry/anki-inc.-anki-drive-starter-kit/
 
-http://thehuffingtonpost.trc.taboola.com/thehuffingtonpost/log/3/click?pi=%2F2013%2F11%2F18%2Fapple-fingerprint-scanner_n_4284444.html&ri=18f8c87d903fb77861b2ca548534fa5f&sd=v1_77340e5c9c9b7f21d2d4dbfdc95d7757_3d866a57-0757-45fa-bbcd-f1ea5d17ec01_1384804461_1384804461&ui=3d866a57-0757-45fa-bbcd-f1ea5d17ec01&it=video&ii=8538832733324625616&pt=text&li=rbox-t2v&url=http%3A%2F%2Flive.huffingtonpost.com%2Fr%2Farchive%2Fsegment%2Frobot-handjobs-are-the-future-and-the-future-is-coming%2F5283e961fe34444eb70002bd%3Fcn%3Dtbla
-
 http://thehuffingtonpost.trc.taboola.com/thehuffingtonpost/log/3/click?pi=%2F2013%2F11%2F18%2Fapple-fingerprint-scanner_n_4284444.html&ri=37a89269371b2a3712c4a2a4ddcb523f&sd=v1_77340e5c9c9b7f21d2d4dbfdc95d7757_3d866a57-0757-45fa-bbcd-f1ea5d17ec01_1384804461_1384804461&ui=3d866a57-0757-45fa-bbcd-f1ea5d17ec01&it=video&ii=-5048347792736116266&pt=text&li=rbox-t2v&redir=http%3A%2F%2Fovens.reviewed.com%2Ffeatures%2Fthe-future-of-induction-cooking-heats-up%3Futm_source%3Dtaboola%26utm_medium%3Dcpc&p=reviewed&r=89
+
+# Google Android, Samsung, Lies
+
+http://mac360.com/2014/01/how-google-tries-and-fails-to-be-as-cool-diverse-and-popular-as-apple/
+
+http://mac360.com/2014/01/lying-and-fud-its-how-to-compete-against-the-mac-iphone-and-ipad/
+
+http://tech.fortune.cnn.com/2014/01/06/apple-google-amazon-merckel/?section=magazines_fortune&utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+rss%2Fmagazines_fortune+%28Fortune+Magazine%29
+
+http://www.businessinsider.com/android-update-process-2013-12?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+typepad%2Falleyinsider%2Fsilicon_alley_insider+%28Silicon+Alley+Insider%29
+
+http://www.cultofmac.com/254695/for-samsung-stealing-cheating-and-lying-are-business-as-usual/
+
+http://appleinsider.com/articles/14/08/02/al-qaeda-prefers-android-over-apples-ios
+
+http://computers.tutsplus.com/tutorials/running-android-on-a-mac--cms-21526
+
+http://www.itnews.com.au/News/390365,popular-android-apps-inherit-bugs-from-recycled-code.aspx
+
+http://teratalks.com/2013/03/the-many-faces-of-android-actually-theres-just-two-types-of-users/
+
+http://www.businessinsider.com/iphone-compared-to-samsung-galaxy-s5-2014-7?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+typepad%2Falleyinsider%2Fsilicon_alley_insider+%28Silicon+Alley+Insider%29
+
+The Galaxy S5 has flaws, too.
+
+> I noticed immediately that my new Galaxy didn't come in the latest version of Android, and that just felt weird.
+There is only one way to set up a new Android phone. And that's to find someone else who already has an Android and get them to talk you through it. It's complicated because it's giving you tons of choices, which is great, but still. The settings section alone is homework.The Google integration is extremely intrusive. Basically, you can't use the phone without signing in with your Gmail identity. I preferred the way iPhone let me keep my "identities" separate. On Android, Google now knows everything I do with my phone whether I like it or not.
+
+http://www.zdnet.com/uk/must-have-ios-android-productivity-apps-7000029108/
+
+http://www.applegazette.com/news/hackers-focusing-android-give-iphone/
+
+http://www.thestreet.com/story/12676818/2/load-up-on-apple-stock-as-android-killer-looms.html
+
+http://appleinsider.com/articles/14/04/14/exclusive-android-docs-reveal-before-iphone-googles-plan-was-a-java-button-phone
+
+http://appleinsider.com/articles/14/04/10/how-samsung-google-teamed-up-to-steal-apple-data-detectors-for-android
+
+http://appleinsider.com/articles/14/03/14/how-android-lost-global-open-market-share-to-apples-integrated-ios
+
+http://appleinsider.com/articles/14/03/07/new-android-rat-infects-google-play-apps-turning-phones-into-spyware-zombies
+
+http://bgr.com/2014/02/20/yandex-forked-android-experience/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+TheBoyGeniusReport+%28BGR+|+Boy+Genius+Report%29
+
+http://www.macworld.co.uk/news/iosapps/ios-vs-android-which-is-more-secure-3499540/
+
+http://teratalks.com/2014/02/why-iphone-users-dont-switch-to-android-or-windows-phone/
+http://arstechnica.com/information-technology/2014/02/neither-microsoft-nokia-nor-anyone-else-should-fork-android-its-unforkable/
+
+http://bgr.com/2014/01/23/android-review-iphone-user/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+TheBoyGeniusReport+%28BGR+|+Boy+Genius+Report%29
+
+# On Microsoft
+
+http://mac360.com/2012/11/what-apple-is-doing-right-with-the-ipad-is-what-microsoft-does-wrong-with-surface/
+
+http://arstechnica.com/information-technology/2014/08/how-microsoft-dragged-its-development-practices-into-the-21st-century/
+
+http://www.tuaw.com/2014/07/24/microsoft-still-doesnt-get-why-the-iphone-succeeded/
+
+http://hothardware.com/News/Senator-Slams-Microsofts-Visa-Hypocrisy-As-MSFT-Searches-For-Foreign-Workers-While-Laying-Off-Others/#!bi9013
+
+http://appleinsider.com/articles/14/07/20/editorial-google-microsoft-claiming-apples-crown-albeit-from-1994
+
+http://www.thestreet.com/story/12779234/1/apple-will-murder-microsoft-and-bury-it-with-blackberrys-corpse.html?puc=yahoo&cm_ven=YAHOO
+
+http://www.thestreet.com/story/12700488/1/nobody-can-save-microsoft-its-about-to-die.html?
+
+http://www.thestreet.com/story/12541622/1/with-or-without-apple-google-will-crush-microsoft.html
+
+http://venturebeat.com/2013/10/22/heres-how-apple-assaulted-microsoft-today-in-three-crushing-quotes/
+
+http://www.stuff.co.nz/technology/digital-living/30024087/ipad-generation-shuns-microsoft-office
+
+http://www.macobserver.com/tmo/article/why-we-love-apple-microsoft-just-makes-us-sigh
+
+http://kensegall.com/2014/03/microsoft-vs-apple-the-strategy-gap/
+
+http://pixobebo.com/2014/02/what-apple-knows-that-samsung-microsoft-and-google-do-not-know/
+
+http://daringfireball.net/2014/02/microsoft_past_and_future
+
+http://www.paulgraham.com/microsoft.html
+
+http://www.thestreet.com/story/12230043/1/apple-will-put-microsoft-hp-out-of-business.html?puc=yahoo&cm_ven=YAHOO
+
