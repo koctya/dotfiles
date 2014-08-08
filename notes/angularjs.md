@@ -3,8 +3,6 @@
 
 https://github.com/jmcunningham/AngularJS-Learning
 
-https://github.com/jmcunningham/AngularJS-Learning
-
 http://www.angularonrails.com/ruby-on-rails-angularjs-single-page-application/
 
 http://toddmotto.com/opinionated-angular-js-styleguide-for-teams/
@@ -99,3 +97,14 @@ https://github.com/jmcunningham/AngularJS-Learning
 
 https://docs.angularjs.org/guide/directive#!
 
+http://tutorials.jenkov.com/angularjs/forms.html
+
+https://docs.angularjs.org/guide/directive#!
+
+ericpanorel.com/2013/10/05/angularjs-password-match-form-validation/
+
+https://docs.angularjs.org/guide/forms
+
+http://dailyjs.com/2013/06/06/angularjs-7/
+
+http://modernweb.com/2014/07/14/leverage-scope-creep-depth-tutorial-angular-js-scope/?utm_source=javascriptweekly&utm_medium=email

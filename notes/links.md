@@ -806,6 +806,10 @@ http://thehuffingtonpost.trc.taboola.com/thehuffingtonpost/log/3/click?pi=%2F201
 
 # Google Android, Samsung, Lies
 
+http://www.bluestacks.com/app-player.html
+
+http://labs.bromium.com/2014/07/31/remote-code-execution-on-android-devices/
+
 http://mac360.com/2014/01/how-google-tries-and-fails-to-be-as-cool-diverse-and-popular-as-apple/
 
 http://mac360.com/2014/01/lying-and-fud-its-how-to-compete-against-the-mac-iphone-and-ipad/

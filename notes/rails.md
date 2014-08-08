@@ -9,6 +9,8 @@ For your free chapters of Rebuilding Rails, check out:
 http://rebuilding-rails.com/RebuildingRailsFree.pdf
 http://rebuilding-rails.com/RebuildingRailsFree.epub
 
+http://www.angularonrails.com/ruby-on-rails-angularjs-single-page-application/
+
 # Setting up a new rails project.
 
     $ rails new samp-app -T

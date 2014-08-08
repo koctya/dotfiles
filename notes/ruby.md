@@ -14,6 +14,8 @@ https://github.com/bbatsov/ruby-style-guide
 
 http://blog.rubybestpractices.com/posts/gregory/040-issue-10-uses-for-modules.html
 
+[MapPLZ an easy geo data system across languages and databases](http://www.mapplz.com/)
+
 https://github.com/karmi/retire
 
 http://robert-reiz.com/2013/01/09/ruby-on-rails-elasticsearch/

@@ -1,3 +1,4 @@
+
 # coffee(java)script stuff
 
 https://efendibooks.com/minibooks/testing-with-coffeescript
@@ -37,6 +38,12 @@ http://julienrenaux.fr/2014/05/25/introduction-to-gulp-js-with-practical-example
 
 http://www.frontendjournal.com/how-to-build-an-asset-pipeline-with-gulpjs-for-any-webapp/
 
+https://github.com/wearefractal/gulp-coffee
+
+http://julienrenaux.fr/2014/05/25/introduction-to-gulp-js-with-practical-examples/
+
+http://pem-musing.blogspot.com/2014/02/a-gulp-of-coffee-your-gulpfile-in.html
+
 https://medium.com/@alexslansky/playing-with-gulp-browserify-node-sass-bourbon-react-and-shoe-a1ea2dd606b
 
 http://stackoverflow.com/questions/23023650/is-it-possible-to-pass-a-flag-to-gulp-to-have-it-run-tasks-in-different-ways
@@ -60,6 +67,7 @@ https://github.com/swannodette/lt-cljs-tutorial
 
 https://github.com/swannodette/lt-cljs-tutorial/blob/master/lt-cljs-tutorial.cljs
 
+http://yogthos.net/blog/54-Building+Single+Page+Apps+with+Reagent
 
 # Javascript
 
