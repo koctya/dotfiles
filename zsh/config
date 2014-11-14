@@ -10,19 +10,21 @@ done
 GREP_OPTIONS="$GREP_OPTIONS --color=auto -s"
 export GREP_OPTIONS
 
+export PLATFORM=`uname -s`
+
 # Set Go environment
 export GOROOT=/usr/local/go
-#export GOOS=darwin
-export GOOS=linux
-#export GOOS=`uname -s`
+export GOOS=$PLATFORM
 export GOARCH=amd64
 export GOPATH=$HOME/code/golang
 
 # set elixir environment
 export ELIXIR_ROOT=/usr/local/elixir
 
-export SCALA_HOME=/usr/local/typesafe-stack
-export PLATFORM=`uname -s`
+#if [ -d /usr/local/typesafe-stack ]; then
+#  export SCALA_HOME=/usr/local/typesafe-stack;
+#  path=($path {SCALA_HOME}/bin));
+#fi
 
 typeset -U path
 path=(/usr/local/homebrew/bin \
@@ -33,11 +35,15 @@ path=(/usr/local/homebrew/bin \
       ${ELIXIR_ROOT}/bin \
       $path \
       ${HOME}/local/node/bin \
-      ${HOME}/local/bin \
-      {SCALA_HOME}/bin)
+      ${HOME}/local/bin )
 export path
 
-#export PATH="/usr/local/homebrew/bin:/usr/local/bin:/usr/local/sbin:/usr/local/git/bin:${GOROOT}/bin:$PATH:${HOME}/local/bin:${SCALA_HOME}/bin"
+#To use Homebrew's directories rather than ~/.rbenv add to your profile:
+#  export RBENV_ROOT=/usr/local/var/rbenv
+
+# To enable shims and autocompletion add to your profile:
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 manpath=(/usr/local/man /usr/local/git/man $manpath)
 export MANPATH
 #="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
@@ -101,5 +107,6 @@ alias e='emacs -nw'
 ############################################################
 
 export RUBY_GC_MALLOC_LIMIT=60000000
-export RUBY_FREE_MIN=200000
+export RUBY_FREE_MIN=200000 # obsolete in 2.1
+export RUBY_GC_HEAP_FREE_SLOTS=60000000
 

@@ -58,3 +58,17 @@ http://www.technightowl.com/newsletter/2014/01/newsletter-issue-736/#macs
 
 http://appledailyreport.com/philips-28-inch-4k-ultra-hd-monitor-gives-me-hope-for-a-retina-display-imac/
 
+Summary
+
+It’s important to read over the description of each Mac startup option to ensure that you understand its use and purpose. Once you’re familiar with these options, however, just use the table below as a handy guide in case you forget the specific keys necessary for each option.
+
+STARTUP KEYS		|	DESCRIPTION
+Command-R	Boot to OS X Recovery Mode
+Alt/Option	Access Mac Startup Manager
+C	Boot to CD, DVD, or USB
+N	NetBoot
+Shift	Safe Boot
+Command-V	Verbose Mode
+Command-S	Single User Mode
+Command-Option-P-R	Reset PRAM
+T	Enable Target Disk Mode

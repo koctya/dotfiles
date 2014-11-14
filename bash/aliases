@@ -3,6 +3,8 @@ alias ..='cd ..'
 alias e='emacs -nw'
 alias pd='pushd'
 
+alias les='less -XRMI'
+
 # Add some easy shortcuts for formatted directory listings and add a touch of color.
 #alias ls="ls -GFh --color=always" # list
 alias ls="ls -GFh" # list
