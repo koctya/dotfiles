@@ -27,10 +27,11 @@ export ELIXIR_ROOT=/usr/local/elixir
 #fi
 
 typeset -U path
-path=(/usr/local/homebrew/bin \
-     /usr/local/bin \
-     /usr/local/sbin \
-     /usr/local/git/bin \
+path=( ${HOME}/.rbenv/shim
+      /usr/local/homebrew/bin \
+      /usr/local/bin \
+      /usr/local/sbin \
+      /usr/local/git/bin \
       ${GOROOT}/bin \
       ${ELIXIR_ROOT}/bin \
       $path \
@@ -47,7 +48,9 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 manpath=(/usr/local/man /usr/local/git/man $manpath)
 export MANPATH
 #="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
+
+# Cuda setup
+#export DYLD_LIBRARY_PATH="/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
 
 #fpath=(~/.zsh/functions $fpath)
 
