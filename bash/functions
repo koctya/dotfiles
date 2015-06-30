@@ -7,7 +7,7 @@ parse_git_branch() {
 function git_here() {
     git init
     git config color.ui auto
-    echo "log tmp db/*.sqlite3 nbproject/private bin .rbx .DS_Store" *~ *#| tr " " "\n" > .gitignore
+    echo "log\ntmp\ndb/*.sqlite3\nbin\n.rbx\n.DS_Store\n*~\n*#\n" > .gitignore
     git add .gitignore
     git commit -m "initial project setup"
 }

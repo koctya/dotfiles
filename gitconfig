@@ -1,7 +1,7 @@
 [user]
 	name = Kurt Landrus
 	# email = klandrus@gmail.com
-	email = klandrus@hgs-worldwide.com
+	email = klandrus@gmail.com
 [color]
 	diff = auto
 	status = auto
@@ -39,6 +39,7 @@
 	editor = emacs
 	pager = less -XRMI
 	excludesfile = /Users/klandrus/.gitignore_global
+	autocrlf = false
 
 [github]
 		user = koctya
@@ -61,3 +62,7 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

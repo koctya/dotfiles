@@ -16,13 +16,14 @@ def y(obj)
   puts obj.to_yaml
 end
 
-if defined? Rails
-  begin
-    require 'hirb'
-    Hirb.enable
-  rescue LoadError
-  end
+#require 'hirb'
+#Hirb.enable
+
+old_print = Pry.config.print
+Pry.config.print = proc do |*args|
+  Hirb::View.view_or_page_output(args[1]) || old_print.call(*args)
 end
+
 
 # === Listing config ===
 # Better colors - by default the headings for methods are too
@@ -40,6 +41,7 @@ Pry.config.ls.private_method_color = :bright_black
 # look at ~/.aprc for more settings for awesome_print
 begin
   require 'awesome_print'
+  #AwesomePrint.pry!
   # The following line enables awesome_print for all pry output,
   # and it also enables paging
   Pry.config.print = proc {|output, value| Pry::Helpers::BaseHelpers.stagger_output("=> #{value.ai}", output)}

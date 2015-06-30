@@ -27,7 +27,7 @@ export ELIXIR_ROOT=/usr/local/elixir
 #fi
 
 typeset -U path
-path=( ${HOME}/.rbenv/shim
+path=( ${HOME}/.rbenv/shims
       /usr/local/homebrew/bin \
       /usr/local/bin \
       /usr/local/sbin \
