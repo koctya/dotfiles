@@ -60,15 +60,60 @@ http://appledailyreport.com/philips-28-inch-4k-ultra-hd-monitor-gives-me-hope-fo
 
 Summary
 
+## Startup options
 It’s important to read over the description of each Mac startup option to ensure that you understand its use and purpose. Once you’re familiar with these options, however, just use the table below as a handy guide in case you forget the specific keys necessary for each option.
 
-STARTUP KEYS		|	DESCRIPTION
-Command-R	Boot to OS X Recovery Mode
-Alt/Option	Access Mac Startup Manager
-C	Boot to CD, DVD, or USB
-N	NetBoot
-Shift	Safe Boot
-Command-V	Verbose Mode
-Command-S	Single User Mode
-Command-Option-P-R	Reset PRAM
-T	Enable Target Disk Mode
+    STARTUP KEYS		|	DESCRIPTION
+    Command-R	Boot to OS X Recovery Mode
+    Alt/Option	Access Mac Startup Manager
+    C	Boot to CD, DVD, or USB
+    N	NetBoot
+    Shift	Safe Boot
+    Command-V	Verbose Mode
+    Command-S	Single User Mode
+    Command-Option-P-R	Reset PRAM
+    T	Enable Target Disk Mode
+
+## useful Terminal commands for OS X
+
+3. Show hidden files in Finder
+
+Terminal also provides you with an easy way to show all hidden files in Finder. It’s done with the following command:
+
+    defaults write com.apple.finder AppleShowAllFiles -bool TRUE
+
+After making this change, you’ll have to restart finder, which can be done with the following command:
+
+    killall Finder
+
+Now, when using Finder to search for files, even files that were normally hidden to protect you from making unintentional changes that could potentially damage your system, will be displayed.
+
+You can also easy hide hidden files once again by repeating the above commands, except replacing “TRUE” with “FALSE” instead.
+
+10. Set your Mac’s screensaver as the wallpaper
+
+If you’re in the mood for some eye candy, you can set your current screensaver as your Mac wallpaper temporarily with Terminal by using the following fun and quirky command:
+
+    /System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background
+
+This will make your current screensaver the desktop wallpaper for as long as the command is running. If you close the Terminal app or use the `Control + C` shortcut, then the wallpaper will return to normal.
+
+4. Make your Mac say anything you want
+
+You can also use Terminal to have your Mac say anything you want. If you want your Mac to say something out loud, you can use the “say” command, followed by whatever it is you want your Mac to say. Here’s an example:
+
+    say “Hi iDownloadBlog, Terminal says hello.”
+
+In this example, your Mac will say exactly what is in the quotes using the default system voice
+
+5. Keep your Mac from falling asleep
+
+Terminal comes with a way to keep your Mac from falling asleep, dimming the display, or showing the screensaver. Simply use the following command:
+
+    caffeinate
+
+With this command having been used, your Mac will act like it just drank a Trenta-sized coffee at Starbucks. You can also set time periods up so the command is only active for a temporary period of time. To do this, add the “-t” flag, followed by a number of seconds you want the feature to be enabled for, like this:
+
+    caffeinate -t 150000
+
+In this example, our Mac would stay awake for 150,000 seconds, and then after that time period, the command would be auto-disabled. You can also press Control + C to end the command early at any time.

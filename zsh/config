@@ -14,8 +14,8 @@ export PLATFORM=`uname -s`
 
 # Set Go environment
 export GOROOT=/usr/local/go
-export GOOS=$PLATFORM
-export GOARCH=amd64
+#export GOOS=$PLATFORM
+#export GOARCH=amd64
 export GOPATH=$HOME/code/golang
 
 # set elixir environment

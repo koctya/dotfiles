@@ -1,4 +1,4 @@
-# Unix as IDE: 
+# Unix as IDE:
 > adapted from [Unix as IDE](http://blog.sanctum.geek.nz/unix-as-ide-introduction/) for emacs with my own opinions.
 
 ## Introduction
@@ -8,6 +8,51 @@ Newbies and experienced professional programmers alike appreciate the concept of
 With such tools available to developers on all major desktop operating systems including Linux and BSD, and with many of the best free of charge, there’s not really a good reason to write your code in Windows Notepad, or with `nano` or `cat`.
 
 However, there’s a minor meme among devotees of Unix and its modern-day derivatives that “Unix is an IDE”, meaning that the tools available to developers on the terminal cover the major features in cutting-edge desktop IDEs with some ease. Opinion is quite divided on this, but whether or not you feel it’s fair to call Unix an IDE in the same sense as Eclipse or Microsoft Visual Studio, it may surprise you just how comprehensive a development environment the humble Bash shell can be.
+
+## On IDEs by [Joe Armstrong](http://joearms.github.io/2016/01/04/fun-with-swift.html)
+
+### Textual vs Interactive interfaces
+
+I’ve said that I don’t like Xcode so I’ve added some reasons why.
+
+Two common ways to create programs are:
+
+1) We create a text file using a text editor.
+
+2) We create a program by clicking on buttons and dragging objects in an IDE (Integrated Development Environment) (for example, Xcode).
+
+In the first method we don’t usually have to tell the user how to create a text file with given content. It suffices to give a listing of the file and assume that the user can create the file using an editor of their choice. It is totally irrelevant how the file is created the only thing that matters is that the content of the file is correct.
+
+In order to understand the program only the content of the file must be understood. We can examine it line by line, asking if we understand what the lines of code mean.
+
+Using an IDE is horribly different - describing how to interact with a an IDE is very difficulty to do in text. Usually we have to show how to do this typically with a YouTube video, or in a mixture of text and images.
+
+An excellent example of the difficulty of describing how to do something is can be found in Notes from a [Swift Developer](http://swiftrien.blogspot.se/2015/11/swift-example-binding-nstableview-to.html) – in this example the author uses a mixture of text and screenshots to describe how to build an application. Text alone does not work.
+
+The application described in the link above has a simple layout which could be easily described in text (for example as an html table)
+
+Unfortunately when we try to reproduce what we’ve seen in a video or follow a description that is a mixture of text and images, we find that the description almost invariably describes a different version of the IDE than the one we have available.
+
+Textual descriptions of the form ``and now click on the doggle control icon’’ are pretty useless if you haven’t got a clue what the doggle control icon looks like.
+
+Worse - when the design process in an interface builder is finished - all the correct buttons have been clicked the resulting ``state’’ of the system (ie the program) is not available in a textual format so we cannot ask, line-by-line what the individual statement in the description mean.
+
+As you might gather - I hate IDEs like Xcode and Eclipse - I like to totally understand every line of code I wrote - my method of understanding code is always the same and independent of language. Find an example program that works then reduce lines until I can reduce no more making a minimal example that works - then understand every line.
+
+This is a slow process - but in the long run faster than clicking at random in a IDE until your program works or Googling like crazy to see if somebody else has a canned solution to your problem.
+
+I get the impression that developers think that developing in a IDE is somehow ``quicker’’ than developing with no such tools. As far as I can see this is false. Once I have a working program in a given directory structure I can make a clone of this in a single terminal command (cp -R ...) and then I’m off in my trusty editor.
+
+Following instructions like
+
+enter this … into a file called …
+type the command … into the shell
+are easy to obey and pass the `telephone test'' (ie can we describe exactly what to do over a telephone) - no images or videos are needed to` show’’ the users what to do.
+
+Once upon a time we could describe how to do something using text only. Then we used text and images. Now it needs videos.
+
+Asking questions about text was easy - `what did you mean in paragraph 4'' now we'd have to ask`what did you do 41.6-41.8 seconds into your video’’ watching somebody doing something in Xcode 200.7 in a video and preforming slow motion playbacks of selected sections is not my idea of programming.
+
 
 ### How is UNIX an IDE?
 
@@ -229,7 +274,7 @@ When you have some spare time, something instructive to do that can help fill ga
     busybox (1) - The Swiss Army Knife of Embedded Linux
     bzcat (1) - decompresses files to stdout
     ...
-    
+
     tom@conan:/usr/bin$ whatis *
     [ (1)                - check file types and compare values
     2to3 (1)             - Python2 to Python3 converter
@@ -329,9 +374,9 @@ A third, which I won’t discuss in depth here, is using plugins such as Conque 
 Checking syntax or compiling with an external program call (e.g. perl -c, gcc) is one of the calls that’s good to make from within the editor using :! commands. If you were editing a Perl file, you could run this like so:
 
     :!perl -c %
-    
+
     /home/tom/project/test.pl syntax OK
-    
+
     Press Enter or type command to continue
 
 The % symbol is shorthand for the file loaded in the current buffer. Running this prints the output of the command, if any, below the command line. If you wanted to call this check often, you could perhaps map it as a command, or even a key combination in your .vimrc file. In this case, we define a command :PerlLint which can be called from normal mode with \l:
@@ -475,7 +520,7 @@ You can run a string of Perl code directly into the interpreter in any one of th
     $ perl -e 'print "Hello world.\n";'
     $ perl <<<'print "Hello world.\n";'
     $ echo 'print "Hello world.\n";' | perl
-    
+
 Of course, it’s more typical to keep the code in a file, which can be run directly:
 
     $ perl hello.pl
@@ -517,22 +562,22 @@ It’s this flexibility of targets that enables make to automate any sort of tas
 An example Makefile for a simple software project might look something like the below:
 
     all: example
-    
+
     example: main.o example.o library.o
         gcc main.o example.o library.o -o example
-    
+
     main.o: main.c
         gcc -c main.c -o main.o
-    
+
     example.o: example.c
         gcc -c example.c -o example.o
-    
+
     library.o: library.c
         gcc -c library.c -o library.o
-    
+
     clean:
         rm *.o example
-    
+
     install: example
         cp example /usr/bin
 
@@ -543,15 +588,15 @@ Much of the above is needlessly verbose or repetitive; for example, if an object
     CC = gcc
     OBJECTS = main.o example.o library.o
     BINARY = example
-    
+
     all: example
-    
+
     example: $(OBJECTS)
         $(CC) $(OBJECTS) -o $(BINARY)
-    
+
     clean:
         rm -f $(BINARY) $(OBJECTS)
-    
+
     install: example
         cp $(BINARY) /usr/bin
 
@@ -564,19 +609,19 @@ PHP files don’t require compilation, of course, but web assets often do. An ex
 Let’s assume for this particular project that there’s a set of four icons used throughout the site, sized to 64 by 64 pixels. We have the source files to hand in SVG vector format, safely tucked away in version control, and now need to generate the smaller bitmaps for the site, ready for deployment. We could therefore define a target icons, set the dependencies, and type out the commands to perform. This is where command line tools in Unix really begin to shine in use with Makefile syntax:
 
     icons: create.png read.png update.png delete.png
-    
+
     create.png: create.svg
         convert create.svg create.raw.png && \
         pngcrush create.raw.png create.png
-    
+
     read.png: read.svg
         convert read.svg read.raw.png && \
         pngcrush read.raw.png read.png
-    
+
     update.png: update.svg
         convert update.svg update.raw.png && \
         pngcrush update.raw.png update.png
-    
+
     delete.png: delete.svg
         convert delete.svg delete.raw.png && \
         pngcrush delete.raw.png delete.png
@@ -586,10 +631,10 @@ With the above done, typing `make icons` will go through each of the source icon
 A similar approach can be used for generating help files in various forms, for example, generating HTML files from Markdown source:
 
     docs: README.html credits.html
-    
+
     README.html: README.md
         markdown README.md > README.html
-    
+
     credits.html: credits.md
         markdown credits.md > credits.html
 
@@ -601,9 +646,9 @@ And perhaps finally deploying a website with git push web, but only after the ic
 For a more compact and abstract formula for turning a file of one suffix into another, you can use the .SUFFIXES pragma to define these using special symbols. The code for converting icons could look like this; in this case, $< refers to the source file, $* to the filename with no extension, and $@ to the target.
 
     icons: create.png read.png update.png delete.png
-    
+
     .SUFFIXES: .svg .png
-    
+
     .svg.png:
         convert $< $*.raw.png && \
         pngcrush $*.raw.png $@
@@ -634,8 +679,8 @@ The classic way to use gdb is as the shell for a running program compiled in C o
 At the (gdb) prompt, you can type run to start the program, and it may provide you with more detailed information about the causes of errors such as segmentation faults, including the source file and line number at which the problem occurred. If you’re able to compile the code with debugging symbols as above and inspect its running state like this, it makes figuring out the cause of a particular bug a lot easier.
 
     (gdb) run
-    Starting program: /home/tom/gdb/example 
-    
+    Starting program: /home/tom/gdb/example
+
     Program received signal SIGSEGV, Segmentation fault.
     0x000000000040072e in main () at example.c:43
     43     printf("%d\n", *segfault);
@@ -652,8 +697,8 @@ You can set breakpoints for gdb using the break to halt the program’s run if i
     (gdb) break malloc
     Breakpoint 1 at 0x4004c0
     (gdb) run
-    Starting program: /home/tom/gdb/example 
-    
+    Starting program: /home/tom/gdb/example
+
     Breakpoint 1, 0x00007ffff7df2310 in malloc () from /lib64/ld-linux-x86-64.so.2
 
 Thereafter it’s helpful to step through successive lines of code using step. You can repeat this, like any `gdb` command, by pressing Enter repeatedly to step through lines one at a time:
@@ -680,11 +725,11 @@ The much newer `valgrind` can be used as a debugging tool in a similar way. Ther
     ==29557== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
     ==29557== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
     ==29557== Command: ./example
-    ==29557== 
+    ==29557==
     ==29557== Invalid read of size 1
     ==29557==    at 0x40072E: main (example.c:43)
     ==29557==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
-    ==29557== 
+    ==29557==
     ...
 
 The `gdb` and `valgrind` tools can be used together for a very thorough survey of a program’s run. Zed Shaw’s[ Learn C the Hard Way](http://c.learncodethehardway.org/book/) includes a really good introduction for elementary use of valgrind with a deliberately broken program.
@@ -696,7 +741,7 @@ The `strace` and `ltrace` tools are designed to allow watching system calls and 
 You can run ltrace and have it run the program you want to monitor in this way for you by simply providing it as the sole parameter. It will then give you a listing of all the system and library calls it makes until it exits.
 
     $ ltrace ./example
-    __libc_start_main(0x4006ad, 1, 0x7fff9d7e5838, 0x400770, 0x400760 
+    __libc_start_main(0x4006ad, 1, 0x7fff9d7e5838, 0x400770, 0x400760
     srand(4, 0x7fff9d7e5838, 0x7fff9d7e5848, 0, 0x7ff3aebde320) = 0
     malloc(24)                                                  = 0x01070010
     rand(0, 0x1070020, 0, 0x1070000, 0x7ff3aebdee60)            = 0x754e7ddd
@@ -766,7 +811,7 @@ This can be very useful in confusing situations with file locks, or identifying 
 
 As a final debugging tip, you can view the memory allocations for a particular process with `pmap`:
 
-    # pmap 30779 
+    # pmap 30779
     30779:   /usr/sbin/apache2 -k start
     00007fdb3883e000     84K r-x--  /lib/x86_64-linux-gnu/libgcc_s.so.1 (deleted)
     00007fdb38853000   2048K -----  /lib/x86_64-linux-gnu/libgcc_s.so.1 (deleted)
@@ -799,8 +844,8 @@ A *unified diff*, the most common and interoperable format, can be generated by 
     +++ example.c.2    2012-02-15 20:15:57.000000000 +1300
     @@ -1,8 +1,9 @@
      #include <stdio.h>
-    +#include <stdlib.h> 
-    
+    +#include <stdlib.h>
+
      int main (int argc, char* argv[]) { printf("Hello, world!\n");
     -    return 0;
     +    return EXIT_SUCCESS; }
@@ -848,7 +893,7 @@ This creates a file in the same directory, example.c,v, that will track the chan
 You can then view the history of a project with rlog:
 
     $ rlog example.c
-    
+
     RCS file: example.c,v
     Working file: example.c
     head: 1.2
@@ -872,7 +917,7 @@ You can then view the history of a project with rlog:
 
 And get a patch in unified diff format between two revisions with `rcsdiff -u`:
 
-    $ rcsdiff -u -r1.1 -r1.2 ./example.c 
+    $ rcsdiff -u -r1.1 -r1.2 ./example.c
     ===================================================================
     RCS file: ./example.c,v
     retrieving revision 1.1
@@ -909,9 +954,9 @@ Both Git and Mercurial differ from CVS and Subversion in that the basic unit for
     commit c1e5559ddb09f8d02b989596b0f4100ad1aab422
     Author: Tom Ryder <tom@sanctum.geek.nz>
     Date:   Thu Feb 2 01:14:21 2012
-    
+
     Changed my mind about this one.
-    
+
     diff --git a/vim/vimrc b/vim/vimrc index cfbe8e0..65a3143 100644
     --- a/vim/vimrc
     +++ b/vim/vimrc
@@ -919,7 +964,7 @@ Both Git and Mercurial differ from CVS and Subversion in that the basic unit for
      set shiftwidth=4
      set softtabstop=4
      set tabstop=4
-    
+
     -" Heresy
     -inoremap <C-a> <Home>
     -inoremap <C-e> <End>
