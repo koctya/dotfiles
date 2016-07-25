@@ -36,7 +36,8 @@ path=( ${HOME}/.rbenv/shims
       ${ELIXIR_ROOT}/bin \
       $path \
       ${HOME}/local/node/bin \
-      ${HOME}/local/bin )
+
+      ${HOME}/.local/bin )
 export path
 
 #To use Homebrew's directories rather than ~/.rbenv add to your profile:
