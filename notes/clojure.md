@@ -1,24 +1,22 @@
 # Clojure
 
 
-http://blog.danieljanus.pl/blog/2014/05/20/you-already-use-lisp-syntax/
+[You already use Lisp syntax](http://blog.danieljanus.pl/blog/2014/05/20/you-already-use-lisp-syntax/)
 
-http://blog.txus.io/2014/05/why-i-am-excited-about-clojure/
+[Why I am excited about Clojure](http://blog.txus.io/2014/05/why-i-am-excited-about-clojure/)
 
-http://murilopereira.com/the-case-for-reactjs-and-clojurescript
+[The Case for React.js and ClojureScript](http://murilopereira.com/the-case-for-reactjs-and-clojurescript)
 
-https://nightweb.net/blog/clojure-on-mac-app-store.html
+[Leiningen](http://leiningen.org/)
 
-http://leiningen.org/
+[Light Table Docs](http://docs.lighttable.com/)
 
-http://docs.lighttable.com/
+[Clojure to die for](http://cjohansen.no/clojure-to-die-for)
 
-http://cjohansen.no/clojure-to-die-for
+[What is ClojureScript?](https://github.com/clojure/clojurescript)
 
-https://github.com/clojure/clojurescript
+[Light Table ClojureScript Tutorial](https://github.com/swannodette/lt-cljs-tutorial)
 
-http://swannodette.github.io/2014/01/15/clojurescript-for-light-table-users/
+[Web Development with Clojure, Second Edition](https://pragprog.com/book/dswdcloj2/web-development-with-clojure-second-edition)
 
-http://pragprog.com/book/dswdcloj/web-development-with-clojure
-
-
+[Clojure Distilled](https://media.pragprog.com/titles/dswdcloj/ClojureDistilled.pdf)

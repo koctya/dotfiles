@@ -35,70 +35,70 @@ http://www.angularonrails.com/ruby-on-rails-angularjs-single-page-application/
 
 ## Gemfile
 
-    ```ruby
-    source  :rubygems
+```ruby
+source  :rubygems
 
-    gem 'rails', '3.1.3'
+gem 'rails', '3.1.3'
 
-    platforms :ruby do
-      gem 'sqlite3'
-      gem 'therubyracer'
-    end
+platforms :ruby do
+  gem 'sqlite3'
+  gem 'therubyracer'
+end
 
-    group :assets do
-      gem 'sass-rails',   '~> 3.1.5'
-      gem 'coffee-rails', '~> 3.1.1'
-      gem 'uglifier'
-      gem 'zurb-foundation'
-      gem 'compass'
-      gem 'haml-rails'
-    end
+group :assets do
+  gem 'sass-rails',   '~> 3.1.5'
+  gem 'coffee-rails', '~> 3.1.1'
+  gem 'uglifier'
+  gem 'zurb-foundation'
+  gem 'compass'
+  gem 'haml-rails'
+end
 
-    gem 'cells'
-    gem 'jquery-rails'
-    gem 'execjs'
+gem 'cells'
+gem 'jquery-rails'
+gem 'execjs'
 
 
-    group :development, :test do
-      gem 'pry'
-      gem 'awesome_print'
-      gem 'rspec-rails'
-      gem 'rspec-cells'
-      gem 'cucumber-rails'
-      gem 'database_cleaner'
-      gem 'capybara'
-      gem 'launchy'
-      gem 'factory_girl_rails'
-      #gem 'machinist'        # experimenting with machinist
-      gem 'jasmine'
-    end
+group :development, :test do
+  gem 'pry'
+  gem 'awesome_print'
+  gem 'rspec-rails'
+  gem 'rspec-cells'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  #gem 'machinist'        # experimenting with machinist
+  gem 'jasmine'
+end
 
-    group :test do
-      gem 'simplecov', :require => false  # will install simplecov-haml as a dependency
-    end
+group :test do
+  gem 'simplecov', :require => false  # will install simplecov-haml as a dependency
+end
 
-    platforms :mswin do
-    end
+platforms :mswin do
+end
 
-    platforms :jruby do
-      gem 'activerecord-jdbcsqlite3-adapter',  :require => false
-      gem 'jdbc-sqlite3', :require => false
-      gem 'jruby-openssl', :require => false
-      gem 'trinidad'
-      gem 'therubyrhino'
-      gem 'warbler'
-    end
-    ```
+platforms :jruby do
+  gem 'activerecord-jdbcsqlite3-adapter',  :require => false
+  gem 'jdbc-sqlite3', :require => false
+  gem 'jruby-openssl', :require => false
+  gem 'trinidad'
+  gem 'therubyrhino'
+  gem 'warbler'
+end
+```
 
 ### If deploying using jruby
     warble config
     emacs config/warbler.rb
 
 edit lib/tasks/warbler.rake
-    ```ruby
-    require 'warbler'
-    Warbler::Task.new
-    ```
+```ruby
+require 'warbler'
+Warbler::Task.new
+```
 ## Dead Simple Rails Config
 
 Rails 3 makes adding custom configuration dead simple. You don't have to shouldn't add a dependency. Here's how easy it is:
@@ -204,12 +204,13 @@ remotely:
 
 I know what you're thinking, "Wow, that is dead simple". It's even easier by using Capistrano to execute the remote commands. Here is an example Capistrano task from one of my Rails apps:
 
-    task :deploy, :roles  => :production do
-      system "git push origin master"
-      cmd = [ "cd #{root_dir}", "git pull", "touch tmp/restart.txt" ]
-      run cmd.join(" && ")
-    end
-
+```ruby
+task :deploy, :roles  => :production do
+    system "git push origin master"
+    cmd = [ "cd #{root_dir}", "git pull", "touch tmp/restart.txt" ]
+    run cmd.join(" && ")
+end
+```
 This task can be extended to automatically install required gems, update Git submodules, migrate the database, and so on.
 
 #### Other Benefits
@@ -243,6 +244,7 @@ The first thing we need to do is to tell our controller how to respond to AJAX r
 
 in each respond_to block that we are going to call via AJAX. For example, we could update the create action to look like this:
 
+```ruby
     def create
         @post = Post.new(params[:post])
 
@@ -256,12 +258,15 @@ in each respond_to block that we are going to call via AJAX. For example, we cou
           end
         end
     end
+```
 
 Because we didn’t specify any options in the respond_to block, Rails will respond to JavaScript requests by loading a .js ERB with the same name as the controller action (create.js.erb, in this case).
 
 Now that our controller knows how to handle AJAX calls, we need to create our views. For the current example, add create.js.erb in your app/views/posts directory. This file will be rendered and the JavaScript inside will be executed when the call finishes. For now, we’ll simply overwrite the form tag with the title and contents of the blog post:
 
-    $('body').html("<h1><%= escape_javaScript(@post.title) %></h1>").append("<%= escape_javaScript(@post.content) %>");
+ ```javascript
+   $('body').html("<h1><%= escape_javaScript(@post.title) %></h1>").append("<%= escape_javaScript(@post.content) %>");
+```
 
 #### AJAX Callbacks Using Custom JavaScript Events
 Each Rails UJS implementation also provides another way to add callbacks to our AJAX calls – custom JavaScript events. Let’s look at another example. On our Posts index view `(http://localhost:3000/posts/)`, we can see that each post can be deleted via a delete link.
@@ -285,12 +290,15 @@ Each rails UJS AJAX call provides six custom events that can be attached to:
 
 In our case we’ll add an event listener to the ajax:success event on our delete links, and make the deleted post fade out rather than reloading the page. We’ll add the following JavaScript to our application.js file.
 
+```javascript
     $('.delete_post').bind('ajax:success', function() {
         $(this).closest('tr').fadeOut();
     });
+```
 
 We’ll also need to tell our posts_controller not to try to render a view after it finishes deleting the post.
 
+```ruby
     def destroy
       @post = Post.find(params[:id])
       @post.destroy
@@ -299,6 +307,7 @@ We’ll also need to tell our posts_controller not to try to render a view after
         format.html { redirect_to(posts_url) }
         format.js   { render :nothing => true }
       end
+```
 
 Now when we delete a Post it will gradually fade out.
 
@@ -320,6 +329,7 @@ The “data-“ params make it a UJS link.
 
 No more RJS or old faux Prototype helpers. Now instead all you need to do in the controller is include the respond method to handle the xhr request.
 
+```ruby
     def create
         @foo = Bar.new(params[:zook])
         respond_to do |format|
@@ -329,6 +339,7 @@ No more RJS or old faux Prototype helpers. Now instead all you need to do in the
             end
         end
     end
+```
 
 The line for format.js handles the xhr request telling the app to render the view “create.js.erb.” So if you don’t already have the that file, create it now as the next step is to write some custom JavaScript.
 
@@ -340,6 +351,7 @@ Handling the callto
 
 The rails.js file only contains the ability to perform on what to do when you throw AJAX methods to it such as the standard beforeSend, success, complete, or error. This way you can write any custom functions to interact with these callbacks. Here is a base structure of how to handle just that:
 
+```javascript
     $(“#my_remote_form”)
         .bind("ajax:beforeSend", function(){
             // Things to do before sending
@@ -353,6 +365,7 @@ The rails.js file only contains the ability to perform on what to do when you th
         .bind("ajax:beforeSend", function(){
             // Things to do for an error
         });
+```
 
 The beforeSend action is great for letting the user know that something is happening. This can be done by changing the value of the submit button or adding a nice AJAX spinner graphic.
 
@@ -360,8 +373,10 @@ Handling the server callback
 
 So the object was successfully saved to the database, now let’s take the data returned and append it to the DOM with an animation signifier.
 
+```javascript
     $(“#foo_list”).prepend(“<%=escape_javascript(render :partial=>’foo/bar_item’) %>");
     $(“#foo_list”).effect(“bounce”, { times:3 }, 300);
+```
 
 ### [RGB Color Values](http://www.htmlhelp.com/cgi-bin/color.cgi?rgb=7FFFD4)
 
