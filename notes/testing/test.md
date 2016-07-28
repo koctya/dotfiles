@@ -10,6 +10,21 @@ minitest/mock by Steven Baker, is a beautifully tiny mock object framework.
 
 minitest/pride shows pride in testing and adds coloring to your test output. I guess it is an example of how to write IO pipes too. :P
 
+```ruby
+require 'minitest/spec'
+require 'minitest/autorun'
+
+describe Array do
+  it "can be created with now arguments" do
+    Array.new.must_be_instance_of Array
+  end
+
+  it "can be created with a specific size" do
+    Array.new(10).size.must_equal 10
+  end
+end
+```
+
 ### FEATURES/PROBLEMS:
 - minitest/autorun - the easy and explicit way to run all your tests.
 - minitest/unit - a very fast, simple, and clean test system.
