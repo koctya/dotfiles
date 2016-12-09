@@ -54,5 +54,6 @@ source $ZSH/oh-my-zsh.sh
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+export PATH="$PATH:/usr/local/mysql/bin"
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

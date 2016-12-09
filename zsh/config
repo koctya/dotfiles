@@ -16,7 +16,10 @@ export PLATFORM=`uname -s`
 export GOROOT=/usr/local/go
 #export GOOS=$PLATFORM
 #export GOARCH=amd64
-export GOPATH=$HOME/code/golang
+# golib holds libs downloaded using go get.
+export GOPATH=$HOME/code/golib:$HOME/code/golang
+#export GOPATH=$HOME/code/golang
+# path=($path $HOME/code/golib/bin)
 
 # set elixir environment
 export ELIXIR_ROOT=/usr/local/elixir
@@ -33,6 +36,8 @@ path=( ${HOME}/.rbenv/shims
       /usr/local/sbin \
       /usr/local/git/bin \
       ${GOROOT}/bin \
+      ${GOPATH}/bin \
+      $HOME/code/golib/bin \
       ${ELIXIR_ROOT}/bin \
       $path \
       ${HOME}/local/node/bin \

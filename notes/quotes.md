@@ -10,4 +10,15 @@
 > "I thought of objects being like biological cells and / or individual computers on a network, only able to communicate with messages"
 - Alan Kay, creator of Smalltalk, on the meaning of "object oriented programming"
 
-> BSD is what you get when a bunch of Unix hackers sit down to try to port a Unix system to the PC. Linux is what you get when a bunch of PC hackers sit down and try to write a Unix system for the PC.
+>BSD is what you get when a bunch of Unix hackers sit down to try to port a Unix system to the PC. Linux is what you get when a bunch of PC hackers sit down and try to write a Unix system for the PC.
+
+>Do you want to know the difference between a master and a beginner?
+ - The master has failed more times than the beginner has tried 
+ - Yoda
+
+>Where Jave championed forcefully protecting programmers from themselves, Ruby included a hanging rope in the welcome kit.
+-DHH
+
+One last quote from Joe Armstrong, which highlights how a person looks at something based on their background: 
+>“If you’re coming from the Erlang/Haskell world you’ll think, ‘Swift is verbose and a bit of a mess,’ but if you’re coming from Objective-C you’ll think, ‘Swift is concise and elegant.’”
+- Joe Armstrong

@@ -146,3 +146,19 @@ When you `git fetch`, git retrieves any commits from the target remote that you 
 #### Pull requests
 
 If you are hoping to contribute back to the original fork, you can send the original author a pull request.
+
+### Task lists
+
+In GitHub markdown you can create task lists.
+
+- [x] task 1
+- [ ] task 2
+- [ ] task 3
+
+If you embed this task list in the initial comment section of your PR then it can be seen on the GitHub pull request page
+
+# More resources
+
+[GitHub cheat sheet](https://github.com/tiimgreen/GitHub-cheat-sheet)
+
+

@@ -24,6 +24,17 @@
 	w = whatchanged
   sl = stash list                   # list stashes
 
+  # Set Upstream  =====
+  su  = "!git branch -u origin/\"$(git rev-parse --abbrev-ref HEAD)\""
+  # Push branch =====
+  pb  = "!git push origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  # pull upstream =====
+  up  = "!git pull origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  # Create pull request for current branch  =====
+  pr = "!open \"http://github.com/$(git remote -v|sed -e '/^origin/!d' -e '/(push)$/!d' -e 's|^.*github\\.com[:/]\\([^. ]*\\).*$|\\1|')/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
+  # Go to github webpage  =====
+  gh = "!open \"http://github.com/$(git remote -v|sed -e '/^origin/!d' -e '/(push)$/!d' -e 's|^.*github\\.com[:/]\\([^. ]*\\).*$|\\1|')\""
+
 [apply]
 	whitespace = nowarn
 
@@ -54,7 +65,7 @@
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
