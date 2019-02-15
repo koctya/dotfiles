@@ -24,6 +24,8 @@
 	w = whatchanged
   sl = stash list                   # list stashes
 
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+
   # Set Upstream  =====
   su  = "!git branch -u origin/\"$(git rev-parse --abbrev-ref HEAD)\""
   # Push branch =====

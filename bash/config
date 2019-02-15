@@ -20,6 +20,7 @@ done
 GREP_OPTIONS="$GREP_OPTIONS --color=auto -s"
 export GREP_OPTIONS
 export CLICOLOR=1
+export LS_COLORS=1
 # Set colors
 export LS_COLORS='di=1;36:fi=0:ln=4;34:pi=5:so=4;5:bd=5:cd=5:or=4;91:mi=4;92:ex=35:*.rb=90'
 
@@ -46,10 +47,11 @@ shopt -s histappend
 # Set Go environment
 export GOROOT=/usr/local/go
 #export GOOS=darwin
-export GOOS=linux
+#export GOOS=linux
 #export GOOS=`uname -s`
-export GOARCH=amd64
-export GOPATH=$HOME/code/golang
+#export GOARCH=amd64
+export GOPATH=$HOME/go
+export BUFFALO_PLUGIN_PATH=$GOPATH/bin
 
 export RBXOPT=-X19
 
@@ -59,5 +61,5 @@ export HISTSIZE=5000
 export HISTIGNORE="&:ls:exit"
 
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
-export PATH=$HOME/bin:/usr/local/bin:/usr/local/cuda/bin:${PATH}:${GOROOT}/bin:${SCALA_HOME}/bin:${HOME}/local/bin
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/cuda/bin:${PATH}:${GOROOT}/bin:${GOPATH}/bin:${SCALA_HOME}/bin:${HOME}/local/bin
 export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH

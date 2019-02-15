@@ -5,6 +5,8 @@ alias pd='pushd'
 
 alias les='less -XRMI'
 
+alias tre="tree -I 'tmp|doc'"
+
 # Add some easy shortcuts for formatted directory listings and add a touch of color.
 #alias ls="ls -GFh --color=always" # list
 alias ls="ls -GFh" # list
@@ -36,6 +38,17 @@ alias gf='git flow feature'
 alias gmerge='git merge --no-ff'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
 alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+
+# buffalo
+alias b="buffalo"
+alias bs="b setup"
+alias bt="b test"
+alias bn="b new"
+alias bd="b dev"
+alias bb="b build"
+alias bu="b update"
+alias bm="b db migrate"
+alias bc="b db create"
 
 # rails
 alias rc='bundle exec rails console'

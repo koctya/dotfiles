@@ -5,10 +5,15 @@ parse_git_branch() {
 
 # Creates git repostitory with some reasonable default settings in current folder
 function git_here() {
+    touch README.md
     git init
     git config color.ui auto
     echo "elm-stuff\nnode_modules\nnpm-debug.log\ndist\nlog\ntmp\ndb/*.sqlite3\nbin\n.rbx\n.DS_Store\n*~\n*#\n" > .gitignore
     git add .gitignore
+    git add README.md
     git commit -m "initial project setup"
-}
 
+    echo Add remote
+    echo "git remote add origin http://host/myname/repo_name.git"
+    echo "git push -u origin master"
+}

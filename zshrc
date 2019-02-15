@@ -37,6 +37,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+ulimit -n 10000
+
+eval "$(ssh-agent -s)"
+
 . ~/.zsh/config
 . ~/.zsh/aliases
 # . ~/.zsh/completion
@@ -57,3 +61,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/usr/local/mysql/bin"
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export path=($path /Applications/Postgres.app/Contents/Versions/latest/bin )
+
+
+### Added by IBM Cloud CLI
+source /usr/local/Bluemix/bx/zsh_autocomplete
