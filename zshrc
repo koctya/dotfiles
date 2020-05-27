@@ -36,6 +36,7 @@ plugins=(git bundler)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
 
 ulimit -n 10000
 
@@ -52,6 +53,7 @@ eval "$(ssh-agent -s)"
 
 # Customize to your needs...
 #export PATH=$PATH:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+export PATH=$PATH:$GOPATH/bin
 
 ### Added by the Heroku Toolbelt
 #export PATH="/usr/local/heroku/bin:$PATH"

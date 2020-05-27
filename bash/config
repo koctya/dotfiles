@@ -63,3 +63,4 @@ export HISTIGNORE="&:ls:exit"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/cuda/bin:${PATH}:${GOROOT}/bin:${GOPATH}/bin:${SCALA_HOME}/bin:${HOME}/local/bin
 export DYLD_LIBRARY_PATH=/usr/local/cuda/lib:$DYLD_LIBRARY_PATH
+
