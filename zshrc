@@ -41,6 +41,7 @@ export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_byte
 ulimit -n 10000
 
 eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519   
 
 . ~/.zsh/config
 . ~/.zsh/aliases
@@ -65,6 +66,6 @@ export PATH="$PATH:/usr/local/mysql/bin"
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export path=($path /Applications/Postgres.app/Contents/Versions/latest/bin )
 
-
 ### Added by IBM Cloud CLI
 source /usr/local/Bluemix/bx/zsh_autocomplete
+if [ -e /Users/klandrus/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/klandrus/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

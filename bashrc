@@ -10,6 +10,10 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
+eval $(ssh-agent -s)                                      
+ssh-add ~/.ssh/id_ed25519   
+
+
 [[ -s "${HOME}/.rvm/scripts/rvm" ]] && source "${HOME}/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
