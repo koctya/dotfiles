@@ -25,6 +25,11 @@
 - [Unique Pointers Aren't Just About Memory Management](http://pcwalton.github.com/blog/2012/10/03/unique-pointers-arent-just-about-memory-management/)
 - [Rust Protocols Tutorial](http://theincredibleholk.wordpress.com/2012/08/17/rust-protocols-tutorial/)
 
+### Lisp
+
+- [Ooh! Ooh! My turn! Why Lisp?](http://smuglispweeny.blogspot.com/2008/02/ooh-ooh-my-turn-why-lisp.html)
+
+
 #### From Stackoverflow
 
 I have been working in Erlang for a little while now and so far I really like the concurrency and reliability features. It is a great niche language for writing scalable fault-tolerant distributed systems.

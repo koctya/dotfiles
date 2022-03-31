@@ -62,7 +62,6 @@ gem 'capistrano', '2.14.1'
   gem 'better_errors',  '~> 1.0.1'
   gem 'binding_of_caller',  '~> 0.7.2'
   gem 'rails_best_practices',  '~> 1.14.4'
-  gem 'sextant',  '~> 0.2.4'
   gem 'capybara',  '~> 1.1.2'
   gem 'rspec-rails',  '~> 2.14.0'
   gem 'spork',  '~> 0.9.2'
@@ -74,5 +73,5 @@ gem 'capistrano', '2.14.1'
 #end
 
 #platforms :ruby do
-  gem 'puma',  '~> 2.6.0'
+  gem 'puma',  ">= 3.12.4"
 #end

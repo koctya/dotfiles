@@ -32,3 +32,7 @@ Now, don’t get me wrong: I love rvm. But I have to admit that managing gemsets
 ## the bundler plugin in ZSH handles bundler exec automatically
 
 If you’re using ZSH then you can add the bundler plugin and avoid some of these hoops. It has a function that checks to see if bundler is installed and if you’re in a directory with a Gemfile. If so, then if you run a command on its list of commands to run with bundle exec (e.g. cap, guard, heroku, ruby, rake) it will automatically wrap that command in bundle exec. Win. With that plugin in place, you can almost entirely just stop using gemsets and you’ll never have any problems.
+
+## install to vendor
+
+	bundle install --path vendor/bundle

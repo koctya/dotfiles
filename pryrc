@@ -1,7 +1,7 @@
 #Pry.config.editor = "mate" # if os X
 Pry.config.editor = "subl"
 
-Pry.config.prompt = Pry::NAV_PROMPT
+# Pry.config.prompt = Pry::NAV_PROMPT
 
 Pry.commands.alias_command 'c', 'continue' rescue nil
 Pry.commands.alias_command 's', 'step' rescue nil

@@ -16,7 +16,10 @@ export PLATFORM=`uname -s`
 export GOROOT=/usr/local/go
 #export GOOS=$PLATFORM
 #export GOARCH=amd64
-export GOPATH=$HOME/code/golang
+# golib holds libs downloaded using go get.
+#export GOPATH=$HOME/code/golib:$HOME/code/golang
+export GOPATH=$HOME/go
+# path=($path $HOME/code/golib/bin)
 
 # set elixir environment
 export ELIXIR_ROOT=/usr/local/elixir
@@ -33,10 +36,13 @@ path=( ${HOME}/.rbenv/shims
       /usr/local/sbin \
       /usr/local/git/bin \
       ${GOROOT}/bin \
+      ${GOPATH}/bin \
+      $HOME/code/golib/bin \
       ${ELIXIR_ROOT}/bin \
       $path \
       ${HOME}/local/node/bin \
-      ${HOME}/local/bin )
+
+      ${HOME}/.local/bin )
 export path
 
 #To use Homebrew's directories rather than ~/.rbenv add to your profile:
@@ -75,7 +81,7 @@ setopt NO_LIST_BEEP
 setopt LOCAL_OPTIONS # allow functions to have local options
 setopt LOCAL_TRAPS # allow functions to have local traps
 setopt HIST_VERIFY
-setopt SHARE_HISTORY # share history between sessions ???
+#setopt SHARE_HISTORY # share history between sessions ???
 setopt EXTENDED_HISTORY # add timestamps to history
 setopt PROMPT_SUBST
 setopt CORRECT

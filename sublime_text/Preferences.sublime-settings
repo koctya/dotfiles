@@ -1,6 +1,9 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Sunburst.tmTheme",
+	"bold_folder_labels": true,
 	"ensure_newline_at_eof_on_save": true,
+	"always_show_minimap_viewport": true,
+	"find_selected_text": true,
 	"ignored_packages":
 	[
 		"GitGutter",
@@ -13,6 +16,8 @@
 	],
 	"save_on_focus_lost": true,
 	"tab_size": 2,
+	"highlight_line": true,
+  	"highlight_modified_tabs": true,
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": "true"

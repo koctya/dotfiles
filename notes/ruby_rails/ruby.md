@@ -1,5 +1,9 @@
 # Ruby notes
 
+## rbenv vs rvm
+
+[Using rbenv to Manage Rubies and Gems ](https://robots.thoughtbot.com/using-rbenv-to-manage-rubies-and-gems)
+
 ## Links
 
 https://github.com/spilin/ruby-requirejs
