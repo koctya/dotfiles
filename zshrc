@@ -41,6 +41,8 @@ source $ZSH/oh-my-zsh.sh
 . ~/.zsh/aliases
 # . ~/.zsh/completion
 
+export ERL_AFLAGS="-kernel shell_history enabled"
+
 #source ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # use .localrc for settings specific to one system

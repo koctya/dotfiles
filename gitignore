@@ -1,5 +1,9 @@
 .DS_Store
 .svn
+.elixir_ls
+_build
+deps
+node_modules
 *~
 .*.swp
 *.elc

@@ -3,8 +3,9 @@
 	"ensure_newline_at_eof_on_save": true,
 	"ignored_packages":
 	[
-		"Vintage",
-		"GitGutter"
+		"GitGutter",
+		"Package Control",
+		"Vintage"
 	],
 	"rulers":
 	[
